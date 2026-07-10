@@ -1,0 +1,19 @@
+/* ...kode yang lama tetap ada... */
+
+/* Kelas untuk mengaktifkan modal (opacity & skala normal) */
+#photo-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#photo-modal.show > div {
+    transform: scale(1);
+}
+
+/* Sedikit styling kustom untuk bingkai putus-putus */
+#ultah-photo {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5); /* Efek glow pink */
+}
+#story-text {
+    white-space: pre-line; /* Membuat browser membaca enter (\n) di JavaScript sebagai baris baru */
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Ulang Tahun RPG</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        /* CSS Manual untuk kestabilan struktur modal & animasi */
+        #photo-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        #photo-modal.modal-active {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        .modal-box {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 340px;
+            padding: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        #photo-modal.modal-active .modal-box {
+            transform: scale(1) !important;
+        }
+
+        /* ANIMASI LAYAR BERGETAR (SHAKE EFFECT) */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+            20%, 40%, 60%, 80% { transform: translateX(6px); }
+        }
+        .shake-animation {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* ANIMASI BERKILAU UNTUK TOMBOL UTAMA */
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            transform: translateX(-100%);
+            background-image: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 20%,
+                rgba(255, 255, 255, 0.4) 60%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shimmer 2.5s infinite;
+            content: '';
+        }
+    </style>
+</head>
+<body id="bg-screen" class="bg-slate-950 text-slate-100 min-h-screen font-sans flex flex-col justify-between select-none transition-all duration-700 ease-in-out">
+
+    <div class="bg-slate-900/40 border-b border-slate-800/50 p-4 sticky top-0 backdrop-blur-md z-40 flex justify-between items-center shadow-md">
+        <div class="text-xs bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-full font-medium">
+            HP: <span id="player-hp" class="tracking-wider text-base">❤️❤️❤️</span>
+        </div>
+        <div class="text-xs bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-full font-medium">
+            🎒 Kantong: <span id="player-item" class="text-yellow-400 font-bold">Tangan Kosong</span>
+        </div>
+    </div>
+
+    <div class="flex-grow flex items-center justify-center p-4">
+        <div id="game-box" class="bg-slate-900/80 border border-slate-800 rounded-2xl max-w-md w-full shadow-2xl overflow-hidden flex flex-col min-h-[420px] backdrop-blur-md transition-all duration-300">
+            
+            <div id="story-image" class="text-6xl md:text-7xl text-center py-6 bg-slate-950/50 border-b border-slate-800/50 min-h-[120px] flex items-center justify-center">
+                🎮
+            </div>
+
+            <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
+                <div id="story-container">
+                    <p id="story-text" class="text-base md:text-lg leading-relaxed text-slate-200 font-normal"></p>
+                </div>
+
+                <div id="password-container" class="hidden space-y-2">
+                    <input type="text" id="password-input" placeholder="Ketik jawaban di sini..." class="w-full bg-slate-950 border border-slate-800 focus:border-pink-500 rounded-xl px-4 py-3 text-slate-100 outline-none transition-colors text-sm font-sans shadow-inner">
+                    <p id="password-error" class="text-red-400 text-xs font-medium hidden">❌ Jawaban salah, coba ingat-ingat lagi yuk!</p>
+                </div>
+
+                <div id="choices-container" class="grid grid-cols-1 gap-2.5 pt-2">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="photo-modal">
+        <div class="modal-box">
+            <h3 class="text-2xl font-black text-pink-500 mb-4 animate-bounce tracking-wide font-sans">
+                YEYYY!!! 🎉
+            </h3>
+            <div class="w-full bg-white p-3 pb-4 rounded-xl shadow-2xl mb-4 transform rotate-[-1deg]">
+                <img src="foto.jpg" alt="Foto Ulang Tahun" class="w-full h-auto rounded border border-slate-200 object-cover block mx-auto mb-3">
+                <p class="text-slate-800 font-bold text-sm tracking-wide font-mono">
+                    ✨ Happy Birthday to You ✨
+                </p>
+            </div>
+            <p class="text-xs text-slate-400 mb-4 px-2 italic">
+                "Gerbang telah terbuka, petualangan barumu di usia baru dimulai hari ini!"
+            </p>
+            <button id="close-modal" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-xl text-xs transition-colors duration-200 cursor-pointer shadow-md active:scale-95 transform font-sans uppercase tracking-wider border border-pink-400">
+                Tutup Bingkai & Lanjutkan ❌
+            </button>
+        </div>
+    </div>
+
+    <audio id="sound-click" src="click.mp3" preload="auto"></audio>
+    <audio id="bgm-hbd" src="hbd.mp3" preload="auto" loop></audio>
+    <audio id="bgm-romantis" src="romantis.mp3" preload="auto" loop></audio>
+
+    <script src="main.js"></script>
+</body>
+</html>
