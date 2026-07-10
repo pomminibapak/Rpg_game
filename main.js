@@ -332,7 +332,7 @@ function showChoices(node, nodeKey) {
         
         button.addEventListener('click', () => {
             // Masukkan nomor WhatsApp Anda di sini (wajib diawali 62)
-            const nomorWA = "628123456789"; 
+            const nomorWA = "6287783232328"; 
 
             // JALUR 1: JIKA KLIK TOMBOL CHEAT DI GAME OVER
             if (nodeKey === 'gameOver' && choice.type === 'cheat') {
@@ -343,7 +343,7 @@ function showChoices(node, nodeKey) {
             
             // JALUR 2: JIKA KLIK TOMBOL "PETUALANGAN SELESAI" DI HALAMAN TERAKHIR
             if (nodeKey === 'theEndNode' && choice.type === 'whatsappSelesai') {
-                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan suatu pesan/kesan untuk orang ini:\n\n(Tulis kesan & pesanmu di sini yaaa...) 📑✍️💖";
+                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan suatu pesan untuk orang ini:\n\n(Tulis kesan & pesanmu di sini yaaa...) 📑✍️💖";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksSelesai)}`, '_blank');
                 return;
             }
