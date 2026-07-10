@@ -1,15 +1,17 @@
-// 1. Struktur Data Cerita
+// ==========================================
+// 1. STRUKTUR DATA CERITA (SUPER HARD MODE - 5 HP)
+// ==========================================
 const storyNodes = {
     welcome: {
-        text: "Hai! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nBefore we start, let's verify first:\nSiapakah yang memberikan game ini kepada anda?",
-        illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Sistem Keamanan Privat ]</span>",
+        text: "Hai! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi:\nSiapakah yang memberikan game ini kepada anda?",
+        illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
         correctPassword: "mislah",
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "Selamat jawaban anda benar. Mari kita lanjutkan bermain!",
+        text: "Selamat, identitas terkonfirmasi. Silakan masuki ruangan.",
         illustration: "🔓💖<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -17,56 +19,92 @@ const storyNodes = {
         ]
     },
     start: {
-        text: "Kamu terbangun di sebuah ruangan misterius bernuansa merah muda. Di atas meja, terdapat sebuah kalender yang dilingkari dengan warna merah: HARI INI! Tiba-tiba sebuah suara bergema: 'Selamat datang di Ujian Ulang Tahun!'. Apa yang ingin kamu lakukan?",
-        illustration: "🛏️💤❓",
-        bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
+        text: "Kamu terbangun di ruangan remang-remang. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
+        illustration: "🛏️🌑❓",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Periksa laci meja misterius 🗄️", nextNode: 'periksaLaci', type: 'secondary' },
-            { text: "Langsung berjalan keluar ruangan 🚪", nextNode: 'pintuKeluar', type: 'secondary' }
+            { text: "Masuk ke pintu sebelah kiri yang berderit 🚪", nextNode: 'kamarMandiMisterius', type: 'secondary' },
+            { text: "Periksa laci meja di sudut ruangan 🗄️", nextNode: 'periksaLaci', type: 'secondary' },
+            { text: "Mendekati cermin besar di dinding 🪞", nextNode: 'jebakanCermin', type: 'secondary' },
+            { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pintuKeluar', type: 'secondary' }
         ]
     },
+    kamarMandiMisterius: {
+        text: "Kamu masuk ke ruangan gelap berbau lembap. Ada tetesan air yang ritmis: 'tik... tik... tik...'. Di depan ada kotak kado hijau dan wastafel tua.",
+        illustration: "💧🧼📦",
+        bgClass: "bg-gradient-to-br from-slate-900 via-emerald-950/20 to-slate-950",
+        choices: [
+            { text: "Buka kotak kado hijau itu 🎁", nextNode: 'jebakanKado', type: 'danger' },
+            { text: "Selidiki wastafel yang bergetar 💧", nextNode: 'jebakanAir', type: 'danger' },
+            { text: "Gak nyaman, kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }
+        ]
+    },
+    jebakanKado: {
+        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 HP Hilang).",
+        illustration: "🤡💥💔",
+        bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
+        takeDamage: true,
+        choices: [{ text: "Berlari kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+    },
+    jebakanAir: {
+        text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! (1 HP Hilang).",
+        illustration: "⚡💔😱",
+        bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
+        takeDamage: true,
+        choices: [{ text: "Merangkak kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+    },
+    jebakanCermin: {
+        text: "Kamu berdiri di depan cermin. Aneh... bayanganmu tidak mengikuti gerakanmu! Tiba-tiba, tangan dari dalam cermin menarik kerah bajumu dengan kasar! Kamu berteriak dan berhasil lepas, tapi dadamu sesak karena kaget! (1 HP Hilang).",
+        illustration: "🪞🖐️😨",
+        bgClass: "bg-gradient-to-br from-purple-950/30 via-slate-950 to-slate-950",
+        takeDamage: true,
+        choices: [{ text: "Menjauh dari cermin dan kembali ke tengah 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+    },
     periksaLaci: {
-        text: "Kamu membuka laci meja dan menemukan sebuah 'Kunci Emas Berkilau'. Sepertinya ini akan berguna nanti. Kamu menyimpannya di dalam tas.",
+        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci Emas Berkilau'. Sepertinya ini keberuntunganmu.",
         illustration: "🔑✨🧳",
         item: "Kunci Emas",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
-        choices: [
-            { text: "Berjalan keluar ruangan membawa kunci 🏃‍♂️", nextNode: 'pintuKeluar', type: 'primary' }
-        ]
+        choices: [{ text: "Simpan kunci dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'primary' }]
     },
     pintuKeluar: {
-        text: "Kamu tiba di depan sebuah gerbang raksasa yang dijaga oleh seekor naga es (atau mungkin kucing gemuk yang cemberut). Gerbang terkunci rapat dan membutuhkan kunci untuk membukanya.",
-        illustration: "🐲🐾❄️",
+        text: "Kamu tiba di depan gerbang raksasa yang dijaga naga es membeku. Di sebelah kanan gerbang terdapat sebuah tombol merah besar bertuliskan 'OPEN', dan di tengahnya ada lubang kunci kuno. Apa tindakanmu?",
+        illustration: "🐲🚪🚨",
         bgClass: "bg-gradient-to-br from-cyan-950/40 via-slate-950 to-slate-950",
         choices: [
-            { 
-                text: "Buka gerbang dengan Kunci Emas 🔑", 
-                requiredItem: "Kunci Emas", 
-                nextNode: 'tekaTekiGerbang',
-                type: 'primary'
-            },
-            { 
-                text: "Coba dobrak gerbangnya pakai kekuatan cinta 💔", 
-                nextNode: 'endingGagal',
-                type: 'danger' 
-            }
+            { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'primary' },
+            { text: "Tekan tombol merah 'OPEN' biar cepat 🚨", nextNode: 'jebakanTombol', type: 'danger' },
+            { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
+            { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' }
         ]
     },
+    jebakanTombol: {
+        text: "Kamu menekan tombol merah itu. TIT! Tiba-tiba lantai di bawahmu terbuka dan menyemburkan gas beracun! Kamu terbatuk-batuk hebat dan pandanganmu mengabur sebelum berhasil melompat mundur! (1 HP Hilang).",
+        illustration: "🚨💨🤮",
+        bgClass: "bg-gradient-to-br from-red-950/40 via-slate-950 to-slate-950",
+        takeDamage: true,
+        choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
+    },
+    jebakanNaga: {
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 HP Hilang).",
+        illustration: "🐲❄️🥶",
+        bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
+        takeDamage: true,
+        choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
+    },
     tekaTekiGerbang: {
-        text: "Kamu memasukkan Kunci Emas ke lubangnya. KLIK! Kunci berputar, namun gerbang belum terbuka. Sebuah layar digital muncul di tengah gerbang: 'Masukkan Kode PIN Keamanan (Format: DDMMYYYY)'.\n\nPetunjuk: Tanggal lahir sang petualang!",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: 'Masukkan Kode PIN Keamanan (DDMMYYYY) \n\nClue Tanggal lahir Petualang",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
         passwordCorrectNode: 'endingSukses',
-        correctPassword: "20072003"
+        correctPassword: "18092005"
     },
     endingGagal: {
-        text: "Kamu gagal mendobrak pintu dan ditertawakan oleh naga/kucing. Kamu terjebak! (Coba lagi, jangan menyerah!).",
+        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.",
         illustration: "🙀💥🚪",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
-        choices: [
-            { text: "Mulai Ulang Game 🔄", nextNode: 'start', resetInventory: true, type: 'danger' }
-        ]
+        choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
         text: "🎉 KREEEAK! BIP BIP! PIN Benar! Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... SELAMAT ULANG TAHUN! 🎂✨ Semoga harimu menyenangkan dan penuh kebahagiaan!",
@@ -81,7 +119,7 @@ const storyNodes = {
             { text: "Lihat Kejutan Terakhir ✨", nextNode: 'showFotoBerdua', type: 'cheat' }
         ]
     },
-        theEndNode: {
+    theEndNode: {
         text: "terimakasih, see you next time 👋✨",
         illustration: "✨🎬💝",
         bgClass: "bg-gradient-to-br from-slate-950 via-purple-950/30 to-black",
@@ -89,9 +127,8 @@ const storyNodes = {
             { text: "Petualangan Selesai 🏁", type: 'whatsappSelesai' }
         ]
     },
-
     gameOver: {
-        text: "💥 GAME OVER! Nyawa kamu telah habis karena terlalu banyak salah menebak kode rahasia. Jangan berkecil hati, ayo pulihkan tenaga dan coba lagi dari awal!",
+        text: "💥 GAME OVER! Nyawamu habis. Keberuntungan sedang tidak berpihak padamu kali ini. Ayo pulihkan tenaga dan coba lagi!",
         illustration: "💀💔☠️",
         bgClass: "bg-gradient-to-br from-red-950/50 via-slate-950 to-black",
         choices: [
@@ -100,15 +137,19 @@ const storyNodes = {
         ]
     }
 };
-
-// State Sistem Game & Slide Foto
+// ==========================================
+// 2. STATE SISTEM GAME & SLIDE FOTO
+// ==========================================
 let currentItem = "Tangan Kosong";
-let playerHP = 2;
+let maxHP = 5; // <--- HP MAKSIMAL
+let playerHP = 5; // <--- HP SEKARANG
 const daftarFoto = ["bersama1.jpg", "bersama2.jpg", "bersama3.jpg"];
 let indeksFotoAktif = 0;
-let autoSlideInterval = null; // Menyimpan timer slideshow otomatis
+let autoSlideInterval = null;
 
-// Referensi Elemen DOM
+// ==========================================
+// 3. REFERENSI ELEMEN DOM
+// ==========================================
 const bgScreen = document.getElementById('bg-screen');
 const storyTextElement = document.getElementById('story-text');
 const choicesContainer = document.getElementById('choices-container');
@@ -140,49 +181,43 @@ bgmRomantis.volume = 0.4;
 
 closeModalBtn.addEventListener('click', () => { photoModal.classList.remove('modal-active'); });
 
-// LOGIKA KETIKA TOMBOL "SELESAI & KUNCI GAME" DIKLIK
 closePhotoDuaBtn.addEventListener('click', () => { 
-    // Matikan slideshow otomatis agar tidak terus berjalan di latar belakang
     clearInterval(autoSlideInterval);
-    
     photoDuaModal.style.opacity = '0'; 
     photoDuaModal.style.pointerEvents = 'none'; 
     showStoryNode('theEndNode'); 
 });
-
-// FUNGSI GANTI FOTO SLIDE
+// ==========================================
+// 4. LOGIKA SLIDESHOW & MUSIK
+// ==========================================
 function perbaruiTampilanSlide() {
-    slideImg.style.opacity = "0.4"; // Efek transisi berkedip lembut saat ganti gambar
+    slideImg.style.opacity = "0.4";
     setTimeout(() => {
         slideImg.src = daftarFoto[indeksFotoAktif];
         slideImg.style.opacity = "1";
     }, 100);
 }
 
-// LOGIKA JALANKAN SLIDESHOW OTOMATIS
 function jalankanSlideshowOtomatis() {
-    // Bersihkan interval lama jika ada untuk mencegah tabrakan kecepatan
     clearInterval(autoSlideInterval); 
-    
     autoSlideInterval = setInterval(() => {
         indeksFotoAktif = (indeksFotoAktif + 1) % daftarFoto.length;
         perbaruiTampilanSlide();
-    }, 3000); // 3000ms = 3 Detik per foto
+    }, 3000);
 }
 
-// Navigasi Manual (Jika diklik, slideshow otomatis me-reset timernya agar user tidak terburu-buru)
 prevSlideBtn.addEventListener('click', () => {
     indeksFotoAktif = (indeksFotoAktif - 1 + daftarFoto.length) % daftarFoto.length;
     perbaruiTampilanSlide();
     try { soundClick.play(); } catch(e){}
-    jalankanSlideshowOtomatis(); // Reset timer otomatis
+    jalankanSlideshowOtomatis();
 });
 
 nextSlideBtn.addEventListener('click', () => {
     indeksFotoAktif = (indeksFotoAktif + 1) % daftarFoto.length;
     perbaruiTampilanSlide();
     try { soundClick.play(); } catch(e){}
-    jalankanSlideshowOtomatis(); // Reset timer otomatis
+    jalankanSlideshowOtomatis();
 });
 
 function stopAllMusic() {
@@ -190,10 +225,11 @@ function stopAllMusic() {
     bgmRomantis.pause(); bgmRomantis.currentTime = 0;
 }
 
+// Fungsi Update HP Dinamis
 function updateHPDisplay() {
-    if (playerHP === 2) playerHpElement.innerText = "❤️❤️";
-    else if (playerHP === 1) playerHpElement.innerText = "❤️💔";
-    else playerHpElement.innerText = "💔💔";
+    const fullHearts = '❤️'.repeat(playerHP);
+    const emptyHearts = '💔'.repeat(maxHP - playerHP);
+    playerHpElement.innerText = fullHearts + emptyHearts;
 }
 
 function triggerScreenShake() {
@@ -217,6 +253,9 @@ function launchConfettiCelebration() {
     }, 250);
 }
 
+// ==========================================
+// 5. INTI LOGIKA ALUR CERITA
+// ==========================================
 function showStoryNode(nodeKey) {
     if (nodeKey === 'showFotoBerdua') {
         indeksFotoAktif = 0; 
@@ -224,8 +263,6 @@ function showStoryNode(nodeKey) {
         photoDuaModal.style.opacity = '1';
         photoDuaModal.style.pointerEvents = 'auto';
         launchConfettiCelebration(); 
-        
-        // Mulai memutar slideshow otomatis saat bingkai dibuka!
         jalankanSlideshowOtomatis(); 
         return;
     }
@@ -237,6 +274,16 @@ function showStoryNode(nodeKey) {
     choicesContainer.innerHTML = '';
     passwordContainer.classList.add('hidden');
     passwordError.classList.add('hidden');
+
+    if (node.takeDamage) {
+        playerHP--;
+        updateHPDisplay();
+        triggerScreenShake();
+        if (playerHP <= 0) {
+            showStoryNode('gameOver');
+            return;
+        }
+    }
 
     if (node.bgClass) {
         bgScreen.className = `text-slate-100 min-h-screen font-sans flex flex-col justify-between select-none transition-all duration-700 ease-in-out ${node.bgClass}`;
@@ -270,7 +317,7 @@ function showStoryNode(nodeKey) {
             if (node.isPasswordNode) {
                 passwordContainer.classList.remove('hidden');
                 passwordInput.value = ""; 
-                passwordInput.placeholder = nodeKey === 'tekaTekiGerbang' ? "Contoh: 15041994" : "Ketik jawaban di sini...";
+                passwordInput.placeholder = nodeKey === 'tekaTekiGerbang' ? "Contoh: 20072003" : "Ketik jawaban di sini...";
                 
                 const submitBtn = document.createElement('button');
                 submitBtn.innerText = "Konfirmasi Jawaban 🔑";
@@ -309,6 +356,9 @@ function showStoryNode(nodeKey) {
     }
 }
 
+// ==========================================
+// 6. LOGIKA TOMBOL & INTEGRASI WHATSAPP
+// ==========================================
 function showChoices(node, nodeKey) {
     node.choices.forEach(choice => {
         if (choice.requiredItem && currentItem !== choice.requiredItem) return;
@@ -316,7 +366,6 @@ function showChoices(node, nodeKey) {
         const button = document.createElement('button');
         button.innerText = choice.text;
         
-        // Atur warna tombol sesuai tipenya
         if (choice.type === 'primary') {
             button.className = "w-full bg-gradient-to-r from-pink-600 to-rose-600 text-center px-4 py-3 rounded-xl border border-pink-400/50 transition-all duration-200 text-sm font-bold transform hover:scale-[1.01] active:scale-95 text-white cursor-pointer shadow-md hover:brightness-110 btn-shimmer";
         } else if (choice.type === 'danger') {
@@ -324,26 +373,23 @@ function showChoices(node, nodeKey) {
         } else if (choice.type === 'cheat') {
             button.className = "w-full bg-gradient-to-r from-amber-500 to-orange-600 text-center px-4 py-3 rounded-xl border border-amber-400/40 transition-all duration-200 text-sm font-bold transform hover:scale-[1.01] active:scale-95 text-white cursor-pointer shadow-md hover:brightness-110 btn-shimmer";
         } else if (choice.type === 'whatsappSelesai') {
-            // Desain tombol hijau gradasi khas WhatsApp yang menarik & berkilau
             button.className = "w-full bg-gradient-to-r from-emerald-500 to-green-600 text-center px-4 py-3 rounded-xl border border-emerald-400/40 transition-all duration-200 text-sm font-bold transform hover:scale-[1.01] active:scale-95 text-white cursor-pointer shadow-lg hover:brightness-110 btn-shimmer uppercase tracking-wider";
         } else {
             button.className = "w-full bg-slate-800/90 hover:bg-slate-700/90 text-center px-4 py-3 rounded-xl border border-slate-700 transition-all duration-200 text-sm font-medium transform hover:border-pink-500/50 active:scale-95 text-slate-200 cursor-pointer shadow-sm";
         }
         
         button.addEventListener('click', () => {
-            // Masukkan nomor WhatsApp Anda di sini (wajib diawali 62)
+            // === SILAKAN GANTI NOMOR WHATSAPP ANDA DI BAWAH INI ===
             const nomorWA = "6287783232328"; 
 
-            // JALUR 1: JIKA KLIK TOMBOL CHEAT DI GAME OVER
             if (nodeKey === 'gameOver' && choice.type === 'cheat') {
-                const teksPesan = "Developer baik hati yang keren, aku kalah menebak kode nih... Minta cheat code rahasia buat pulihkan nyawa dong! 🥺👉👈";
+                const teksPesan = "Developer baik hati yang keren, aku kalah menebak kode nih... Minta code rahasia buat pulihkan nyawa dong! 🥺👉👈";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`, '_blank');
                 return;
             }
             
-            // JALUR 2: JIKA KLIK TOMBOL "PETUALANGAN SELESAI" DI HALAMAN TERAKHIR
             if (nodeKey === 'theEndNode' && choice.type === 'whatsappSelesai') {
-                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan suatu pesan untuk orang ini:\n\n(Tulis kesan & pesanmu di sini yaaa...) 📑✍️💖";
+                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan suatu pesan/kesan untuk orang ini:\n\n(Tulis kesan & pesanmu di sini yaaa...) 📑✍️💖";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksSelesai)}`, '_blank');
                 return;
             }
@@ -352,12 +398,13 @@ function showChoices(node, nodeKey) {
                 currentItem = "Tangan Kosong"; playerItemElement.innerText = currentItem;
                 photoModal.classList.remove('modal-active');
             }
-            if (choice.fullHeal) { playerHP = 2; updateHPDisplay(); }
+            if (choice.fullHeal) { playerHP = maxHP; updateHPDisplay(); } // Menggunakan maxHP
             showStoryNode(choice.nextNode);
         });
         choicesContainer.appendChild(button);
     });
 }
 
+// Menjalankan Game Pertama Kali
 showStoryNode('welcome');
 updateHPDisplay();
