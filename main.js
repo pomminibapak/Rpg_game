@@ -3,7 +3,7 @@
 // ==========================================
 const storyNodes = {
     welcome: {
-        text: "Hai! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi:\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi terlebih dahulu:\n\nSiapakah yang memberimu coklat hari ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "Selamat, identitas terkonfirmasi. Silakan mulai petualangan.",
+        text: "Selamat jawabanmu sesuai, identitas terkonfirmasi. \nSilakan mulai petualangan.",
         illustration: "🔓💖<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -19,7 +19,7 @@ const storyNodes = {
         ]
     },
     start: {
-        text: "Pada suatu hari kamu terbangun di ruangan remang-remang berwarna coklat muda. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
+        text: "Pada suatu hari kamu terbangun disebuah ruangan remang-remang berwarna coklat muda. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
         illustration: "🛏️🌑❓",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -94,7 +94,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN Keamanan (DDMMYYYY)' \n\n Clue : tanggal spesial ",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n Clue : Tanggal spesial (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -108,7 +108,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN yg ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan!",
+        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN yg ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
@@ -294,7 +294,7 @@ function launchConfettiCelebration() {
         // TEMBAKAN TIM 1: Ledakan instan di tengah layar
         confetti({
             ...configUtama,
-            particleCount: 150,
+            particleCount: 350,
             origin: { y: 0.5 }
         });
 
@@ -302,8 +302,8 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 60,
+                particleCount: 280,
+                angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
         }, 400);
@@ -312,9 +312,9 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
+                particleCount: 220,
+                angle: 90,
+                origin: { x: 0.5, y: 0.7 }
             });
         }, 900);
 
@@ -322,8 +322,8 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 60,
+                particleCount: 230,
+                angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
         }, 1300);
@@ -332,8 +332,8 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 120,
+                particleCount: 180,
+                angle: 110,
                 origin: { x: 1, y: 0.7 }
             });
         }, 1900);
@@ -341,8 +341,8 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 60,
+                particleCount: 680,
+                angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
         }, 4400);
@@ -351,41 +351,120 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
+                particleCount: 180,
+                angle: 90,
+                origin: { x: 0.5, y: 0.7 }
             });
-        }, 4900);
+        }, 7500);
 
         // TEMBAKAN TIM 8 (Jeda 100ms): Semburan silang dari sudut kiri bawah
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
-                angle: 60,
+                particleCount: 380,
+                angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
-        },5200);
+        },7900);
 
         // TEMBAKAN TIM 9 (Jeda 200ms): Semburan silang dari sudut kanan bawah
         setTimeout(() => {
             confetti({
                 ...configUtama,
                 particleCount: 80,
+                angle: 110,
+                origin: { x: 1, y: 0.7 }
+            });
+        }, 8900);
+
+// TEMBAKAN TIM 10 (Jeda 100ms): Semburan silang dari sudut kiri bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 380,
+                angle: 70,
+                origin: { x: 0, y: 0.7 }
+            });
+        }, 9400);
+
+        // TEMBAKAN TIM 3 (Jeda 200ms): Semburan silang dari sudut kanan bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 320,
+                angle: 110,
+                origin: { x: 1, y: 0.7 }
+            });
+        }, 11900);
+
+        // TEMBAKAN TIM 4 (Jeda 100ms): Semburan silang dari sudut kiri bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 380,
+                angle: 60,
+                origin: { x: 0, y: 0.7 }
+            });
+        }, 12300);
+
+        // TEMBAKAN TIM 5 (Jeda 200ms): Semburan silang dari sudut kanan bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 180,
+                angle: 90,
+                origin: { x: 0.5, y: 0.7 }
+            });
+        }, 13900);
+// TEMBAKAN TIM 6 (Jeda 100ms): Semburan silang dari sudut kiri bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 380,
+                angle: 60,
+                origin: { x: 0, y: 0.7 }
+            });
+        }, 14500);
+
+        // TEMBAKAN TIM 7 (Jeda 200ms): Semburan silang dari sudut kanan bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 280,
+                angle: 100,
+                origin: { x: 1, y: 0.7 }
+            });
+        }, 15900);
+
+        // TEMBAKAN TIM 8 (Jeda 100ms): Semburan silang dari sudut kiri bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 180,
+                angle: 70,
+                origin: { x: 0, y: 0.7 }
+            });
+        },17200);
+
+        // TEMBAKAN TIM 9 (Jeda 200ms): Semburan silang dari sudut kanan bawah
+        setTimeout(() => {
+            confetti({
+                ...configUtama,
+                particleCount: 280,
                 angle: 120,
                 origin: { x: 1, y: 0.7 }
             });
-        }, 5900);
-
+        }, 18900);
         // TEMBAKAN TIM 10 (Jeda 400ms): Pesta gema penutup yang super menyebar
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 120,
+                particleCount: 820,
+                angle: 90,
                 spread: 140,
-                origin: { y: 0.4 }
+                origin: { x: 0.5, y: 0.4 }
             });
-        }, 6500);
+        }, 22000);
     }
 }
 // ==========================================
