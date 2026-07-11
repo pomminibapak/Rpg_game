@@ -569,16 +569,33 @@ function showStoryNode(nodeKey) {
     typeWriter();
 
     // PERBAIKAN DI SINI: Membuka kado/modal foto disusul ledakan konfeti dengan jeda waktu aman
-    if (nodeKey === 'endingSukses') {
+        if (nodeKey === 'endingSukses') {
         setTimeout(() => { 
+            // 1. Munculkan modal utama
             photoModal.classList.add('modal-active'); 
-            // Jeda tambahan 350ms agar modal selesai mengembang, baru konfeti meledak di atasnya
+            
+            // 2. Cari elemen gambar di dalam modal tersebut
+            const targetImg = photoModal.querySelector('img');
+            if (targetImg) {
+                // Pasang gaya dasar transisi
+                targetImg.style.transition = "all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+                targetImg.style.opacity = "0";
+                targetImg.style.transform = "scale(0.5) translateY(30px)"; // Mengecil dan agak ke bawah
+                
+                // Memicu animasi membal naik (Pop-Up Bounce) setelah jeda sesaat
+                setTimeout(() => {
+                    targetImg.style.opacity = "1";
+                    targetImg.style.transform = "scale(1) translateY(0)";
+                }, 50);
+            }
+
+            // 3. Ledakkan konfeti meriah di atasnya
             setTimeout(() => {
                 launchConfettiCelebration(); 
             }, 350);
         }, 600);
     }
-    
+
     if (nodeKey.startsWith('hadiahKotak')) {
         setTimeout(() => { launchConfettiCelebration(); }, 200);
     }
