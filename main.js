@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "Selamat jawabanmu sesuai, identitas terkonfirmasi. \nSilakan mulai petualangan.",
+        text: "Selamat jawabanmu benar, identitas terkonfirmasi. \nSilahkan mulai petualangan.",
         illustration: "🔓💖<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -108,7 +108,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN yg ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa.. 😁",
+        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yg Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
@@ -294,7 +294,7 @@ function launchConfettiCelebration() {
         // TEMBAKAN TIM 1: Ledakan instan di tengah layar
         confetti({
             ...configUtama,
-            particleCount: 350,
+            particleCount: 150,
             origin: { y: 0.5 }
         });
 
@@ -302,7 +302,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 280,
+                particleCount: 180,
                 angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
@@ -312,7 +312,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 220,
+                particleCount: 120,
                 angle: 90,
                 origin: { x: 0.5, y: 0.7 }
             });
@@ -322,7 +322,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 230,
+                particleCount: 130,
                 angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
@@ -332,7 +332,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 180,
+                particleCount: 110,
                 angle: 110,
                 origin: { x: 1, y: 0.7 }
             });
@@ -341,7 +341,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 680,
+                particleCount: 180,
                 angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
@@ -361,7 +361,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 380,
+                particleCount: 180,
                 angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
@@ -371,7 +371,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 80,
+                particleCount: 180,
                 angle: 110,
                 origin: { x: 1, y: 0.7 }
             });
@@ -381,7 +381,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 380,
+                particleCount: 180,
                 angle: 70,
                 origin: { x: 0, y: 0.7 }
             });
@@ -391,7 +391,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 320,
+                particleCount: 120,
                 angle: 110,
                 origin: { x: 1, y: 0.7 }
             });
@@ -401,7 +401,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 380,
+                particleCount: 180,
                 angle: 60,
                 origin: { x: 0, y: 0.7 }
             });
@@ -420,7 +420,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 380,
+                particleCount: 180,
                 angle: 60,
                 origin: { x: 0, y: 0.7 }
             });
@@ -430,7 +430,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 280,
+                particleCount: 180,
                 angle: 100,
                 origin: { x: 1, y: 0.7 }
             });
@@ -450,7 +450,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 280,
+                particleCount: 180,
                 angle: 120,
                 origin: { x: 1, y: 0.7 }
             });
@@ -459,7 +459,7 @@ function launchConfettiCelebration() {
         setTimeout(() => {
             confetti({
                 ...configUtama,
-                particleCount: 820,
+                particleCount: 220,
                 angle: 90,
                 spread: 140,
                 origin: { x: 0.5, y: 0.4 }
