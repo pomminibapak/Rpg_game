@@ -108,7 +108,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yg Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
+        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
@@ -213,10 +213,13 @@ const passwordError = document.getElementById('password-error');
 const soundClick = document.getElementById('sound-click');
 const bgmHbd = document.getElementById('bgm-hbd');
 const bgmRomantis = document.getElementById('bgm-romantis');
+const bgmHadiah = document.getElementById('bgm-hadiah');
+
 
 let typewriterTimeout; 
 bgmHbd.volume = 0.4;
-bgmRomantis.volume = 0.4;
+bgmRomantis.volume = 0.6;
+bgmHadiah.volume = 0.4;
 
 closeModalBtn.addEventListener('click', () => { photoModal.classList.remove('modal-active'); });
 
@@ -264,6 +267,7 @@ nextSlideBtn.addEventListener('click', () => {
 function stopAllMusic() {
     bgmHbd.pause(); bgmHbd.currentTime = 0;
     bgmRomantis.pause(); bgmRomantis.currentTime = 0;
+    bgmHadiah.pause(); bgmHadiah.currentTime = 0; // Tambahkan baris ini
 }
 
 function updateHPDisplay() {
@@ -511,13 +515,17 @@ function showStoryNode(nodeKey) {
 
     if (node.item) { currentItem = node.item; playerItemElement.innerText = currentItem; }
 
-    if (nodeKey === 'endingSukses') {
+        if (nodeKey === 'endingSukses') {
         stopAllMusic(); bgmHbd.play().catch(e => {});
     } else if (nodeKey === 'halamanSurat') {
         stopAllMusic(); bgmRomantis.play().catch(e => {});
+    } else if (nodeKey.startsWith('hadiahKotak')) { // TAMBAHKAN BLOK INI
+        stopAllMusic(); 
+        bgmHadiah.play().catch(e => {});
     } else if (nodeKey === 'welcome' || (nodeKey === 'start' && currentItem === "Tangan Kosong")) {
         stopAllMusic();
     }
+
 
     let i = 0;
     function typeWriter() {
