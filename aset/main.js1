@@ -1,9 +1,9 @@
 // ==========================================
-// 1. STRUKTUR DATA CERITA (DENGAN GAME PENUTUP)
+// 1. STRUKTUR DATA CERITA (SUPER HARD MODE - 5 HP)
 // ==========================================
 const storyNodes = {
     welcome: {
-        text: "Hai! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi:\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "Hai! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi:\nSiapakah yang memberikan game ini kepada anda?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -74,9 +74,9 @@ const storyNodes = {
         choices: [
             { text: "Tekan tombol merah 'OPEN' biar cepat 🚨", nextNode: 'jebakanTombol', type: 'danger' },
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
-            { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'danger' },
+            { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'secondary' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }
+            { text: "Kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' } // <-- TOMBOL PENYELAMAT BARU
         ]
     },
     jebakanTombol: {
@@ -94,7 +94,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN Keamanan (DDMMYYYY)' \n\n Clue tanggal lahir petualang ",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: 'Masukkan Kode PIN Keamanan (DDMMYYYY)'.",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -108,7 +108,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan!",
+        text: "🎉 KREEEAK! BIP BIP! PIN Benar! Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... SELAMAT ULANG TAHUN! 🎂✨ Semoga harimu menyenangkan dan penuh kebahagiaan!",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
@@ -117,48 +117,11 @@ const storyNodes = {
         illustration: "✉️💝🌹",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
-            { text: "Lihat Ini ✨", nextNode: 'showFotoBerdua', type: 'cheat' }
+            { text: "Lihat Kejutan Terakhir ✨", nextNode: 'showFotoBerdua', type: 'cheat' }
         ]
-    },
-    pilihanGamePenutup: {
-        text: "Sebelum perjalanan ini benar-benar berakhir, apakah kamu bersedia bermain satu game penutup yang santai dan menyenangkan untuk menguji keberuntunganmu hari ini? 🎲✨",
-        illustration: "❓🔮🎮",
-        bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-slate-950",
-        choices: [
-            { text: "Ya, Tentu Bersedia! 🎮", nextNode: 'gamePenutupMulai', type: 'primary' },
-            { text: "Tidak, Langsung Selesai 🏁", nextNode: 'theEndNode', type: 'secondary' }
-        ]
-    },
-    gamePenutupMulai: {
-        text: "Selamat datang di Kotak Keberuntungan! 🎁✨\nDi depanmu ada 3 kotak hadiah misterius. Salah satu kotak berisi Berkah Utama Hari Ini! Pilih satu kotak yang paling menarik hatimu:",
-        illustration: "📦📦📦",
-        bgClass: "bg-gradient-to-br from-amber-950/30 via-slate-950 to-pink-950/20",
-        choices: [
-            { text: "Pilih Kotak Kiri 🛍️", nextNode: 'hadiahKotak1', type: 'cheat' },
-            { text: "Pilih Kotak Tengah 🎁", nextNode: 'hadiahKotak2', type: 'cheat' },
-            { text: "Pilih Kotak Kanan 🎀", nextNode: 'hadiahKotak3', type: 'cheat' }
-        ]
-    },
-    hadiahKotak1: {
-        text: "🎉 Kamu membuka Kotak Kiri! Di dalamnya terdapat gulungan emas bertuliskan:\n\n'Keberuntungan Berlipat Ganda! Kamu akan dikelilingi oleh orang-orang baik dan hari-hari penuh senyuman di usiamu yang baru ini!' 🌟✨",
-        illustration: "🛍️🌟✨",
-        bgClass: "bg-gradient-to-br from-teal-950/40 via-slate-950 to-slate-950",
-        choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
-    },
-    hadiahKotak2: {
-        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya secara ajaib!' 💖🚀",
-        illustration: "🎁💖🔮",
-        bgClass: "bg-gradient-to-br from-pink-950/40 via-slate-950 to-slate-950",
-        choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
-    },
-    hadiahKotak3: {
-        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan Paripurna! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur!' 🌿🌻",
-        illustration: "🎀🌿✨",
-        bgClass: "bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950",
-        choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     theEndNode: {
-        text: "Terima kasih sudah bermain, \nSee you next time ✨ 👋 \n\n\n- MSH",
+        text: "terimakasih, see you next time 👋✨",
         illustration: "✨🎬💝",
         bgClass: "bg-gradient-to-br from-slate-950 via-purple-950/30 to-black",
         choices: [
@@ -171,7 +134,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-red-950/50 via-slate-950 to-black",
         choices: [
             { text: "Bangkit & Mulai Ulang 🔄", nextNode: 'welcome', resetInventory: true, fullHeal: true, type: 'danger' },
-            { text: "Minta Code 📞", type: 'cheat' }
+            { text: "Minta Cheat Code ke Developer 📞", type: 'cheat' }
         ]
     }
 };
@@ -180,8 +143,8 @@ const storyNodes = {
 // 2. STATE SISTEM GAME & SLIDE FOTO
 // ==========================================
 let currentItem = "Tangan Kosong";
-let maxHP = 4; 
-let playerHP = 4; 
+let maxHP = 5; 
+let playerHP = 5; 
 const daftarFoto = ["bersama1.jpg", "bersama2.jpg", "bersama3.jpg"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
@@ -220,12 +183,11 @@ bgmRomantis.volume = 0.4;
 
 closeModalBtn.addEventListener('click', () => { photoModal.classList.remove('modal-active'); });
 
-// KETIKA MODAL FOTO "OUR MEMORIES" DITUTUP -> MASUK KE HALAMAN PILIHAN GAME PENUTUP
 closePhotoDuaBtn.addEventListener('click', () => { 
     clearInterval(autoSlideInterval);
     photoDuaModal.style.opacity = '0'; 
     photoDuaModal.style.pointerEvents = 'none'; 
-    showStoryNode('pilihanGamePenutup'); 
+    showStoryNode('theEndNode'); 
 });
 
 // ==========================================
@@ -277,119 +239,24 @@ function triggerScreenShake() {
     setTimeout(() => { gameBox.classList.remove('shake-animation'); }, 500);
 }
 
-// ==========================================
-// KEMBALI KE METODE GLOBAL (ANTI-ERROR & AMAN)
-// ==========================================
 function launchConfettiCelebration() {
-    if (typeof confetti === 'function') {
-        // PERMANEN: Paksa zIndex tertinggi pada fungsi global bawaan
-        const configUtama = {
-            spread: 90,
-            gravity: 1,
-            ticks: 200,
-            zIndex: 999999, // Menembus semua modal gaib
-            scalar: 1.2
-        };
+    let duration = 4 * 1000;
+    let animationEnd = Date.now() + duration;
+    let defaults = { startVelocity: 35, spread: 360, ticks: 70, zIndex: 10000 };
 
-        // TEMBAKAN TIM 1: Ledakan instan di tengah layar
-        confetti({
-            ...configUtama,
-            particleCount: 150,
-            origin: { y: 0.5 }
-        });
+    function randomInRange(min, max) { return Math.random() * (max - min) + min; }
 
-        // TEMBAKAN TIM 2 (Jeda 100ms): Semburan silang dari sudut kiri bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 60,
-                origin: { x: 0, y: 0.7 }
-            });
-        }, 400);
-
-        // TEMBAKAN TIM 3 (Jeda 200ms): Semburan silang dari sudut kanan bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
-            });
-        }, 900);
-
-        // TEMBAKAN TIM 4 (Jeda 100ms): Semburan silang dari sudut kiri bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 60,
-                origin: { x: 0, y: 0.7 }
-            });
-        }, 1300);
-
-        // TEMBAKAN TIM 5 (Jeda 200ms): Semburan silang dari sudut kanan bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
-            });
-        }, 1900);
-// TEMBAKAN TIM 6 (Jeda 100ms): Semburan silang dari sudut kiri bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 60,
-                origin: { x: 0, y: 0.7 }
-            });
-        }, 4400);
-
-        // TEMBAKAN TIM 7 (Jeda 200ms): Semburan silang dari sudut kanan bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
-            });
-        }, 4900);
-
-        // TEMBAKAN TIM 8 (Jeda 100ms): Semburan silang dari sudut kiri bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 60,
-                origin: { x: 0, y: 0.7 }
-            });
-        },5200);
-
-        // TEMBAKAN TIM 9 (Jeda 200ms): Semburan silang dari sudut kanan bawah
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 80,
-                angle: 120,
-                origin: { x: 1, y: 0.7 }
-            });
-        }, 5900);
-
-        // TEMBAKAN TIM 10 (Jeda 400ms): Pesta gema penutup yang super menyebar
-        setTimeout(() => {
-            confetti({
-                ...configUtama,
-                particleCount: 120,
-                spread: 140,
-                origin: { y: 0.4 }
-            });
-        }, 6500);
-    }
+    let interval = setInterval(function() {
+        let timeLeft = animationEnd - Date.now();
+        if (timeLeft <= 0) return clearInterval(interval);
+        let particleCount = 65 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+    }, 250);
 }
+
 // ==========================================
-// 5. INTI LOGIKA ALUR CERITA (PERBAIKAN TIMING CONFETTI)
+// 5. INTI LOGIKA ALUR CERITA
 // ==========================================
 function showStoryNode(nodeKey) {
     if (nodeKey === 'showFotoBerdua') {
@@ -397,10 +264,7 @@ function showStoryNode(nodeKey) {
         perbaruiTampilanSlide();
         photoDuaModal.style.opacity = '1';
         photoDuaModal.style.pointerEvents = 'auto';
-        
-        // Beri jeda sedikit agar efek konfeti saat buka Our Memories lancar
-        setTimeout(() => { launchConfettiCelebration(); }, 300);
-        
+        launchConfettiCelebration(); 
         jalankanSlideshowOtomatis(); 
         return;
     }
@@ -455,7 +319,7 @@ function showStoryNode(nodeKey) {
             if (node.isPasswordNode) {
                 passwordContainer.classList.remove('hidden');
                 passwordInput.value = ""; 
-                passwordInput.placeholder = nodeKey === 'tekaTekiGerbang' ? "Contoh: 15041994" : "Ketik jawaban di sini...";
+                passwordInput.placeholder = nodeKey === 'tekaTekiGerbang' ? "Contoh: 20072003" : "Ketik jawaban di sini...";
                 
                 const submitBtn = document.createElement('button');
                 submitBtn.innerText = "Konfirmasi Jawaban 🔑";
@@ -489,21 +353,11 @@ function showStoryNode(nodeKey) {
     }
     typeWriter();
 
-    // PERBAIKAN DI SINI: Membuka kado/modal foto disusul ledakan konfeti dengan jeda waktu aman
     if (nodeKey === 'endingSukses') {
-        setTimeout(() => { 
-            photoModal.classList.add('modal-active'); 
-            // Jeda tambahan 350ms agar modal selesai mengembang, baru konfeti meledak di atasnya
-            setTimeout(() => {
-                launchConfettiCelebration(); 
-            }, 350);
-        }, 600);
-    }
-    
-    if (nodeKey.startsWith('hadiahKotak')) {
-        setTimeout(() => { launchConfettiCelebration(); }, 200);
+        setTimeout(() => { photoModal.classList.add('modal-active'); launchConfettiCelebration(); }, 600);
     }
 }
+
 // ==========================================
 // 6. LOGIKA TOMBOL & INTEGRASI WHATSAPP
 // ==========================================
@@ -527,16 +381,17 @@ function showChoices(node, nodeKey) {
         }
         
         button.addEventListener('click', () => {
-            const nomorWA = "6287783232328"; 
+            // === SILAKAN GANTI NOMOR WHATSAPP ANDA DI BAWAH INI ===
+            const nomorWA = "628123456789"; 
 
             if (nodeKey === 'gameOver' && choice.type === 'cheat') {
-                const teksPesan = "Hayy, aku kalah menebak kode nih... Minta  code rahasia buat pulihkan nyawa dong! 🥺👉👈";
+                const teksPesan = "Developer baik hati yang keren, aku kalah menebak kode nih... Minta cheat code rahasia buat pulihkan nyawa dong! 🥺👉👈";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`, '_blank');
                 return;
             }
             
             if (nodeKey === 'theEndNode' && choice.type === 'whatsappSelesai') {
-                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan sesuatu  untuk orang ini:\n\n(Tulis pesanmu di sini yaaa...) 📑✍️💖";
+                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan suatu pesan/kesan untuk orang ini:\n\n(Tulis kesan & pesanmu di sini yaaa...) 📑✍️💖";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksSelesai)}`, '_blank');
                 return;
             }
