@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "Selamat, identitas terkonfirmasi. Silakan masuki ruangan.",
+        text: "Selamat, identitas terkonfirmasi. Silakan mulai petualangan.",
         illustration: "🔓💖<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -19,7 +19,7 @@ const storyNodes = {
         ]
     },
     start: {
-        text: "Kamu terbangun di ruangan remang-remang. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
+        text: "Pada suatu hari kamu terbangun di ruangan remang-remang berwarna coklat muda. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
         illustration: "🛏️🌑❓",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -68,7 +68,7 @@ const storyNodes = {
         choices: [{ text: "Simpan kunci dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'primary' }]
     },
     pintuKeluar: {
-        text: "Kamu tiba di depan gerbang raksasa yang dijaga naga es membeku. Di sebelah kanan gerbang terdapat sebuah tombol merah besar bertuliskan 'OPEN', dan di tengahnya ada lubang kunci kuno. Apa tindakanmu?",
+        text: "Kamu tiba di depan gerbang raksasa yang dijaga oleh naga es membeku. Di sebelah kanan gerbang terdapat sebuah tombol merah besar bertuliskan 'OPEN', dan di tengahnya ada lubang kunci kuno. Apa yang akan kamu lakukan?",
         illustration: "🐲🚪🚨",
         bgClass: "bg-gradient-to-br from-cyan-950/40 via-slate-950 to-slate-950",
         choices: [
@@ -94,7 +94,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN Keamanan (DDMMYYYY)' \n\n Clue tanggal lahir petualang ",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN Keamanan (DDMMYYYY)' \n\n Clue : tanggal spesial ",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -108,7 +108,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan!",
+        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN yg ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan!",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
@@ -536,7 +536,7 @@ function showChoices(node, nodeKey) {
             }
             
             if (nodeKey === 'theEndNode' && choice.type === 'whatsappSelesai') {
-                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan sesuatu  untuk orang ini:\n\n(Tulis pesanmu di sini yaaa...) 📑✍️💖";
+                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan sesuatu  untuk orang ini:\n\n(Tulis pesanmu di sini.) 📑✍️💖";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksSelesai)}`, '_blank');
                 return;
             }
