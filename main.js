@@ -12,7 +12,7 @@ const storyNodes = {
     },
     sandiBenar: {
         text: "Selamat jawabanmu benar, identitas terkonfirmasi. \nSilahkan mulai petualangan.",
-        illustration: "🔐👏✨<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Mulai Petualangan 🚀", nextNode: 'start', type: 'primary' }
@@ -640,7 +640,7 @@ function showChoices(node, nodeKey) {
             }
             
             if (nodeKey === 'theEndNode' && choice.type === 'whatsappSelesai') {
-                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tuliskan sesuatu  untuk orang ini:\n\n(Tulis pesanmu di sini.) 📑✍️💖";
+                const teksSelesai = "Terima kasih telah menyelesaikan petualangan. Tulis sesuatu disini..📑✍️";
                 window.open(`https://wa.me/${nomorWA}?text=${encodeURIComponent(teksSelesai)}`, '_blank');
                 return;
             }
