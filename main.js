@@ -12,7 +12,7 @@ const storyNodes = {
     },
     sandiBenar: {
         text: "Selamat jawabanmu benar, identitas terkonfirmasi. \nSilahkan mulai petualangan.",
-        illustration: "🔓💖<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        illustration: "🔐👏✨<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Mulai Petualangan 🚀", nextNode: 'start', type: 'primary' }
@@ -108,16 +108,16 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
+        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Untuk Seseorang yang Spesial,\n\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi sosok yang luar biasa selama ini.\n\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya! 💖✨",
-        illustration: "✉️💝🌹",
+        text: "Untuk Seseorang yang Spesial,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi sosok yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨",
+        illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
-            { text: "Lihat Ini ✨", nextNode: 'showFotoBerdua', type: 'cheat' }
+            { text: "✨ Lihat Ini ✨", nextNode: 'showFotoBerdua', type: 'cheat' }
         ]
     },
     pilihanGamePenutup: {
@@ -146,8 +146,8 @@ const storyNodes = {
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak2: {
-        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya secara ajaib!' 💖🚀",
-        illustration: "🎁💖🔮",
+        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya secara ajaib!' 🎉🚀",
+        illustration: "🎁🎊🔮",
         bgClass: "bg-gradient-to-br from-pink-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
@@ -159,7 +159,7 @@ const storyNodes = {
     },
     theEndNode: {
         text: "Terima kasih sudah bermain, \nSee you next time ✨ 👋 \n\n\n- MSH",
-        illustration: "✨🎬💝",
+        illustration: "✨🎬💫",
         bgClass: "bg-gradient-to-br from-slate-950 via-purple-950/30 to-black",
         choices: [
             { text: "Petualangan Selesai 🏁", type: 'whatsappSelesai' }
