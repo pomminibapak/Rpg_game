@@ -247,7 +247,7 @@ function jalankanSlideshowOtomatis() {
     autoSlideInterval = setInterval(() => {
         indeksFotoAktif = (indeksFotoAktif + 1) % daftarFoto.length;
         perbaruiTampilanSlide();
-    }, 3000);
+    }, 1000);
 }
 
 prevSlideBtn.addEventListener('click', () => {
