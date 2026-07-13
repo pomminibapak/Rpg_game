@@ -61,7 +61,7 @@ const storyNodes = {
         choices: [{ text: "Menjauh dari cermin dan kembali ke tengah 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
     },
     periksaLaci: {
-        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci Emas Berkilau'. Sepertinya ini keberuntunganmu.",
+        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci Emas Berkilau'. Sepertinya ini hari keberuntunganmu.",
         illustration: "🔑✨🧳",
         item: "Kunci Emas",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
@@ -94,7 +94,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n Clue : Tanggal spesial (ddmmyyyy)",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n Clue : Tanggal Spesial (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -108,12 +108,12 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti virtual. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya, sambil pikir-pikir besok mau teraktir apa yaa.. 😁",
+        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu. Di balik gerbang, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu ya lagunya, sambil pikir-pikir besok mau teraktir kita apa yaa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Untuk Seseorang yang Spesial,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi sosok yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨",
+        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nSenang bisa mendengar dan berbagi cerita denganmu, Sebenarnya banyak cerita yang ingin ditulis dis sepertinya itu tidak sekarang atau mungkin tidak perlu diceritakan, tt kamu capek bacanya,😅\nDi usia yang baru ini, aku mendoakan yang terbaik untuk semua aspek hidupmu. Semoga kariermu makin menanjak, semua impian besaryang sering kamu ceritakan bisa terwujud satu per satu, dan tentunya, hubunganmu dengan pasangan selalu dipenuhi kebahagiaan serta dilancarkan ke jenjang yang lebih serius. Tetaplah menjadi sosok yang ceria, humble, dan menginspirasi seperti yang saya kenal selama ini. Cheers for another great year ahead, Happy Birthday!\n",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
