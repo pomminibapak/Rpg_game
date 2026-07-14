@@ -40,21 +40,21 @@ const storyNodes = {
         ]
     },
     jebakanKado: {
-        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 HP Hilang).",
+        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 Nyawa Hilang).",
         illustration: "🤡💥💔",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Berlari kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+        choices: [{ text: "Berlari kembali ke ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanAir: {
-        text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! (1 HP Hilang).",
+        text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! (1 Nyawa Hilang).",
         illustration: "⚡💔😱",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Merangkak kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+        choices: [{ text: "Merangkak kembali ke tengah ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanCermin: {
-        text: "Kamu berdiri di depan cermin. Aneh... bayanganmu tidak mengikuti gerakanmu! Tiba-tiba, tangan dari dalam cermin menarik kerah bajumu dengan kasar! Kamu berteriak dan berhasil lepas, tapi dadamu sesak karena kaget! (1 HP Hilang).",
+        text: "Kamu berdiri di depan cermin. Aneh... bayanganmu tidak mengikuti gerakanmu! Tiba-tiba, tangan dari dalam cermin menarik kerah bajumu dengan kasar! Kamu berteriak dan berhasil lepas, tapi dadamu sesak karena kaget! (1 Nyawa Hilang).",
         illustration: "🪞🖐️😨",
         bgClass: "bg-gradient-to-br from-purple-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -80,14 +80,14 @@ const storyNodes = {
         ]
     },
     jebakanTombol: {
-        text: "Kamu menekan tombol merah itu. TIT! Tiba-tiba lantai di bawahmu terbuka dan menyemburkan gas beracun! Kamu terbatuk-batuk hebat dan pandanganmu mengabur sebelum berhasil melompat mundur! (1 HP Hilang).",
+        text: "Kamu menekan tombol merah itu. TIT! Tiba-tiba lantai di bawahmu terbuka dan menyemburkan gas beracun! Kamu terbatuk-batuk hebat dan pandanganmu mengabur sebelum berhasil melompat mundur! (1 Nyawa Hilang).",
         illustration: "🚨💨🤮",
         bgClass: "bg-gradient-to-br from-red-950/40 via-slate-950 to-slate-950",
         takeDamage: true,
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 HP Hilang).",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -113,7 +113,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nSenang bisa mendengar dan berbagi cerita denganmu, Sebenarnya banyak cerita yang ingin ditulis dis sepertinya itu tidak sekarang atau mungkin tidak perlu diceritakan, tt kamu capek bacanya,😅\nDi usia yang baru ini, aku mendoakan yang terbaik untuk semua aspek hidupmu. Semoga kariermu makin menanjak, semua impian besaryang sering kamu ceritakan bisa terwujud satu per satu, dan tentunya, hubunganmu dengan pasangan selalu dipenuhi kebahagiaan serta dilancarkan ke jenjang yang lebih serius. Tetaplah menjadi sosok yang ceria, humble, dan menginspirasi seperti yang saya kenal selama ini. Cheers for another great year ahead, Happy Birthday!\n",
+        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
