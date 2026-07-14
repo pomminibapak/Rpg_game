@@ -36,7 +36,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Masuk ke ruang santai🧋", nextNode: 'ruangSantai', type: 'danger' },
-            { text: " keluar menuju gerbang utama ⚔️", nextNode: 'pintuKeluar', type: 'secondary' },
+            { text: " Keluar menuju gerbang utama ⚔️", nextNode: 'pintuKeluar', type: 'danger' },
             { text: "Kembali ke Ruangan Utama 🚪", nextNode: 'start', type: 'secondary' }
         ]
     },
@@ -47,7 +47,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-            { text: " keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'danger' },
+            { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' },
         
         ]
     },
@@ -57,8 +57,7 @@ const storyNodes = {
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Bosan!!, Matikan Musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' },
-            { text: " Keluar Menuju lorong ⚔️", nextNode: 'pilihanLorong', type: 'secondary' },
+            { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' }
             
         ]
     },
