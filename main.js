@@ -26,7 +26,40 @@ const storyNodes = {
             { text: "Masuk ke pintu sebelah kiri yang berderit 🚪", nextNode: 'kamarMandiMisterius', type: 'secondary' },
             { text: "Periksa laci meja di sudut ruangan 🗄️", nextNode: 'periksaLaci', type: 'secondary' },
             { text: "Mendekati cermin besar di dinding 🪞", nextNode: 'jebakanCermin', type: 'secondary' },
-            { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pintuKeluar', type: 'secondary' }
+            { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pilihanLorong', type: 'secondary' }
+        ]
+    },
+    
+    pilihanLorong: {
+        text: "Kamu melangkah keluar pintu ruang utama. Di depanmu ada lorong yang bercabang. Ke mana kamu ingin melangkah sekarang?",
+        illustration: "🛣️🎃🗺️",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Masuk ke ruang santai🧋", nextNode: 'ruangSantai', type: 'danger' },
+            { text: " keluar menuju gerbang utama ⚔️", nextNode: 'pintuKeluar', type: 'secondary' },
+            { text: "Kembali ke Ruangan Utama 🚪", nextNode: 'start', type: 'secondary' }
+        ]
+    },
+    
+    ruangSantai: {
+        text: "Kamu memasuki Ruang Santai. Di sini terdapat sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n kamu bisa menyalakan musik.. 💫",
+        illustration: "🍿🎹📀",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+            { text: " keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'danger' },
+        
+        ]
+    },
+    
+    ruangSantaiMusikOn: {
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧",
+        illustration: "🎶🎊✨",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Bosan!!, Matikan Musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' },
+            { text: " Keluar Menuju lorong ⚔️", nextNode: 'pilihanLorong', type: 'secondary' },
+            
         ]
     },
     kamarMandiMisterius: {
@@ -189,6 +222,7 @@ let autoSlideInterval = null;
 // ==========================================
 // 3. REFERENSI ELEMEN DOM
 // ==========================================
+const bgmSantai = document.getElementById('bgm-santai');
 const bgScreen = document.getElementById('bg-screen');
 const storyTextElement = document.getElementById('story-text');
 const choicesContainer = document.getElementById('choices-container');
@@ -218,8 +252,9 @@ const bgmHadiah = document.getElementById('bgm-hadiah');
 
 let typewriterTimeout; 
 bgmHbd.volume = 0.4;
-bgmRomantis.volume = 0.6;
+bgmRomantis.volume = 0.8;
 bgmHadiah.volume = 0.4;
+if (bgmSantai) bgmSantai.volume = 0.5; 
 
 closeModalBtn.addEventListener('click', () => { photoModal.classList.remove('modal-active'); });
 
@@ -268,6 +303,8 @@ function stopAllMusic() {
     bgmHbd.pause(); bgmHbd.currentTime = 0;
     bgmRomantis.pause(); bgmRomantis.currentTime = 0;
     bgmHadiah.pause(); bgmHadiah.currentTime = 0; // Tambahkan baris ini
+    // Tambahkan baris di bawah ini:
+    if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
 }
 
 function updateHPDisplay() {
@@ -475,6 +512,24 @@ function launchConfettiCelebration() {
 // 5. INTI LOGIKA ALUR CERITA (PERBAIKAN TIMING CONFETTI)
 // ==========================================
 function showStoryNode(nodeKey) {
+    
+    if (nodeKey === 'aksiPutarMusik') {
+        stopAllMusic();
+        if (bgmSantai) bgmSantai.play().catch(e => {});
+        showStoryNode('ruangSantaiMusikOn'); // Alihkan visual ke tombol Matikan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
+    
+    if (nodeKey === 'aksiStopMusik') {
+        if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
+        showStoryNode('ruangSantai'); // Kembalikan visual ke tombol Nyalakan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
+    
+    if (nodeKey === 'pilihanLorong') {
+        stopAllMusic(); // Memastikan musik mati otomatis jika pemain kabur ke lorong
+    }
+    // ------------------------------------------------
     if (nodeKey === 'showFotoBerdua') {
         indeksFotoAktif = 0; 
         perbaruiTampilanSlide();
