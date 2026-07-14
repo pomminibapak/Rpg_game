@@ -44,7 +44,7 @@ const storyNodes = {
         illustration: "🤡💥💔",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Berlari kembali ke ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
+        choices: [{ text: "Bangun dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanAir: {
         text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! (1 Nyawa Hilang).",
@@ -58,7 +58,7 @@ const storyNodes = {
         illustration: "🪞🖐️😨",
         bgClass: "bg-gradient-to-br from-purple-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Menjauh dari cermin dan kembali ke tengah 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
+        choices: [{ text: "Menjauh dari cermin dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
     },
     periksaLaci: {
         text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci Emas Berkilau'. Sepertinya ini hari keberuntunganmu.",
