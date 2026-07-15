@@ -89,11 +89,11 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Apakah barang favorit pemilik game ini?",
+        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Tuliskan plat nomor motor kamu.",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
-        correctPassword: "laptop",
+        correctPassword: "scoopy",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
         
     },
@@ -117,10 +117,17 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n Benda apa yang pernah kamu beri untuk pemilik game ini?\n Clue: dua kata.",
         illustration: "✨⚔️👏",
-        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
-        
+        isPasswordNode: true,
+        passwordCorrectNode: 'sandiBenar2',
+        correctPassword: "botol minum",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
+    },
+    sandiBenar2: {
+        text: "\nBerhasil, jawaban yang tepat. \n Kamu berhasil membuka laci dan mendapatkan kunci emas untuk membuka gerbang utama",
+        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Buka laci 🧲", type:'primary', nextNode: "periksaLaci" } // Dihukum kembali ke lorong awal
         ]
@@ -172,7 +179,7 @@ const storyNodes = {
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Kembali ke lorong🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
+            { text: "Cari kunci emas🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
     jebakanTombol: {
