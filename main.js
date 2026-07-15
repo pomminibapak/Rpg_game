@@ -36,6 +36,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Masuk ke ruang santai🧋", nextNode: 'ruangSantai', type: 'danger' },
+            { text: " Buka pintu besi berkarat🕸️", nextNode: 'ruangJebakan', type: 'danger' },
             { text: " Keluar menuju gerbang utama ⚔️", nextNode: 'pintuKeluar', type: 'danger' },
             { text: "Kembali ke Ruangan Utama 🚪", nextNode: 'start', type: 'secondary' }
         ]
@@ -60,6 +61,37 @@ const storyNodes = {
         choices: [
             { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' }
             
+        ]
+    },
+    
+    ruangJebakan: {
+        text: "<em>*BRAAAKK!!*</em><br><br>Begitu kamu melangkah masuk, pintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan samar-samar kamu mendengar suara detak jam dinding yang berputar sangat cepat.<br><br>Di depanmu hanya ada tiga tombol darurat berwarna kusam. Atmosfer ruangan semakin mencekam, kamu harus segera keluar!",
+        illustration: "🛏️🌑❓",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "🔴 Tekan Tombol Merah", nextNode: "jebakanZonk" },    // Salah (Gagal)
+            { text: "🟢 Tekan Tombol Hijau", nextNode: "jebakanLolos" },   // Benar (Selamat)
+            { text: "🔵 Tekan Tombol Biru", nextNode: "jebakanZonk" }     // Salah (Gagal)
+        ]
+    },
+
+    // A. Kondisi Jika Selamat / Lolos
+    jebakanLolos: {
+        text: "<em>*KLIK... BZZZT*</em><br><br>Terdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser terbuka kembali! Tanpa berpikir panjang, kamu langsung berlari keluar menuju lorong yang lebih aman.",
+        illustration: "🛏️🌑❓",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Lari Kembali ke Lorong", nextNode: "pilihanLorong" } // Kembali selamat ke lorong
+        ]
+    },
+
+    // B. Kondisi Jika Zonk / Gagal
+    jebakanZonk: {
+        text: "<em>*TIIIT... TIIIT... TIIIT!*</em><br><br>Alarm berbunyi nyaring! Tiba-tiba terdengar suara tawa misterius yang menggema di langit-langit, dan ruangan mendadak menjadi gelap gulita! Kamu panik dan pingsan karena ketakutan...<br><br>(Tenang, petualanganmu belum berakhir. Kamu terbangun kembali di lorong luar.)",
+        illustration: "🛏️🌑❓",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Coba Bangkit Kembali", nextNode: "pilihanLorong" } // Dihukum kembali ke lorong awal
         ]
     },
     kamarMandiMisterius: {
@@ -311,7 +343,7 @@ function stopAllMusic() {
 function updateHPDisplay() {
     const fullHearts = '❤️'.repeat(playerHP);
     const emptyHearts = '💔'.repeat(maxHP - playerHP);
-    playerHpElement.innerText = fullHearts + emptyHearts;
+    playerHpElement.innerHTML = fullHearts + emptyHearts;
 }
 
 function triggerScreenShake() {
@@ -569,7 +601,7 @@ function showStoryNode(nodeKey) {
     if (node.illustration) { storyImageElement.innerHTML = node.illustration; } 
     else { storyImageElement.innerHTML = "🎮"; }
 
-    if (node.item) { currentItem = node.item; playerItemElement.innerText = currentItem; }
+    if (node.item) { currentItem = node.item; playerItemElement.innerHTML = currentItem; }
 
         if (nodeKey === 'endingSukses') {
         stopAllMusic(); bgmHbd.play().catch(e => {});
@@ -601,7 +633,7 @@ function showStoryNode(nodeKey) {
                 passwordInput.placeholder = nodeKey === 'tekaTekiGerbang' ? "Contoh: 15041994" : "Ketik jawaban di sini...";
                 
                 const submitBtn = document.createElement('button');
-                submitBtn.innerText = "Konfirmasi Jawaban 🔑";
+                submitBtn.innerHTML = "Konfirmasi Jawaban 🔑";
                 submitBtn.className = "w-full bg-gradient-to-r from-pink-600 to-purple-600 text-center px-4 py-3 rounded-lg border border-pink-400 transition-all duration-200 text-sm font-bold transform active:scale-95 text-white cursor-pointer btn-shimmer shadow-lg hover:brightness-110";
                 
                 submitBtn.addEventListener('click', () => {
@@ -618,7 +650,7 @@ function showStoryNode(nodeKey) {
                 choicesContainer.appendChild(submitBtn);
             } else if (nodeKey === 'endingSukses') {
                 const nextBtn = document.createElement('button');
-                nextBtn.innerText = "Baca ini ya ✉️";
+                nextBtn.innerHTML = "Baca ini ya ✉️";
                 nextBtn.className = "w-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-center px-5 py-3.5 rounded-xl border border-pink-300 transition-all duration-200 text-sm font-bold transform active:scale-95 text-white cursor-pointer btn-shimmer shadow-xl hover:scale-[1.01]";
                 nextBtn.addEventListener('click', () => {
                     photoModal.classList.remove('modal-active');
@@ -672,7 +704,7 @@ function showChoices(node, nodeKey) {
         if (choice.requiredItem && currentItem !== choice.requiredItem) return;
 
         const button = document.createElement('button');
-        button.innerText = choice.text;
+        button.innerHTML = choice.text;
         
         if (choice.type === 'primary') {
             button.className = "w-full bg-gradient-to-r from-pink-600 to-rose-600 text-center px-4 py-3 rounded-xl border border-pink-400/50 transition-all duration-200 text-sm font-bold transform hover:scale-[1.01] active:scale-95 text-white cursor-pointer shadow-md hover:brightness-110 btn-shimmer";
@@ -702,7 +734,7 @@ function showChoices(node, nodeKey) {
             }
             
             if (choice.resetInventory) {
-                currentItem = "Tangan Kosong"; playerItemElement.innerText = currentItem;
+                currentItem = "Tangan Kosong"; playerItemElement.innerHTML = currentItem;
                 photoModal.classList.remove('modal-active');
             }
             if (choice.fullHeal) { playerHP = maxHP; updateHPDisplay(); }
