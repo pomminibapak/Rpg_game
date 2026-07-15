@@ -63,7 +63,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n Merah adalah clue kedua untuk menemukan kunci",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n Merah adalah clue kedua untuk menemukan kunci emas",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
