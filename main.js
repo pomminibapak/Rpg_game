@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "[🔸Selamat jawaban terkonfirmasi🔸] \n-------------------------------\n🛡️Gerbang Memori yang Terkunci🔐\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \nApakah kamu siap memecahkan kodenya?",
+        text: "[🔸Selamat jawaban terkonfirmasi🔸] \n-------------------------------\n🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\n\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \n\nApakah kamu siap menyelesaikan misinya?",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -24,7 +24,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Masuk ke pintu sebelah kiri yang berderit 🚪", nextNode: 'kamarMandiMisterius', type: 'secondary' },
-            { text: "Periksa laci meja di sudut ruangan 🗄️", nextNode: 'periksaLaci', type: 'secondary' },
+           
             { text: "Mendekati cermin besar di dinding 🪞", nextNode: 'jebakanCermin', type: 'secondary' },
             { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
@@ -42,11 +42,12 @@ const storyNodes = {
     },
     
     ruangSantai: {
-        text: "Kamu memasuki Ruang Santai. Di sini terdapat sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n kamu bisa menyalakan musik.. 💫",
+        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n kamu bisa menyalakan musik.. 💫",
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+             { text: "Periksa laci meja di sudut ruangan 🗄️", nextNode: 'periksaLaci', type: 'danger' },
             { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' },
         
         ]
@@ -97,7 +98,7 @@ const storyNodes = {
         illustration: "🔑✨🧳",
         item: "Kunci Emas",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
-        choices: [{ text: "Simpan kunci dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'primary' }]
+        choices: [{ text: "Simpan kunci dan kembali ke lorong🏃‍♂️", nextNode: 'pilihanLorong', type: 'primary' }]
     },
     pintuKeluar: {
         text: "Kamu tiba di depan gerbang raksasa yang dijaga oleh naga es membeku. Di sebelah kanan gerbang terdapat sebuah tombol merah besar bertuliskan 'OPEN', dan di tengahnya ada lubang kunci kuno. Apa yang akan kamu lakukan?",
@@ -108,7 +109,7 @@ const storyNodes = {
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Kembali ke ruangan utama 🏃‍♂️", nextNode: 'start', type: 'secondary' }
+            { text: "Kembali ke lorong🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
     jebakanTombol: {
@@ -136,6 +137,7 @@ const storyNodes = {
     endingGagal: {
         text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.",
         illustration: "🙀💥🚪",
+        takeDamage : true,
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
@@ -190,7 +192,7 @@ const storyNodes = {
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     theEndNode: {
-        text: "Terima kasih sudah bermain, \nSemoga kamu suka\nSee you next time ✨ 👋 \n\n\n- MSH",
+        text: "Terima kasih sudah bermain, \nSemoga kamu suka..😁\n\nSee you next time ✨ 👋 \n\n\n- MSH",
         illustration: "✨🎬💫",
         bgClass: "bg-gradient-to-br from-slate-950 via-purple-950/30 to-black",
         choices: [
