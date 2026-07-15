@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "Selamat jawabanmu benar, identitas terkonfirmasi. \n🛡️Gerbang Memori yang Terkunci🔐\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \nApakah kamu siap memecahkan kodenya?",
+        text: "[🔸Selamat jawaban terkonfirmasi🔸] \n-------------------------------\n🛡️Gerbang Memori yang Terkunci🔐\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \nApakah kamu siap memecahkan kodenya?",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
