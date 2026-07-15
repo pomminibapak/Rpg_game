@@ -15,7 +15,8 @@
     box-shadow: 0 0 20px rgba(236, 72, 153, 0.5); /* Efek glow pink */
 }
 #story-text {
-    white-space: pre-line; /* Membuat browser membaca enter (\n) di JavaScript sebagai baris baru */
+    white-space: pre-line;
+    text-align: justify;/* Membuat browser membaca enter (\n) di JavaScript sebagai baris baru */
 }
 @keyframes popBounce {
     0% { transform: scale(0); opacity: 0; }

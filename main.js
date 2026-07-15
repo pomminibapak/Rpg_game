@@ -3,7 +3,7 @@
 // ==========================================
 const storyNodes = {
     welcome: {
-        text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantangmu hari ini.\n\nSebelum melangkah, mari verifikasi terlebih dahulu:\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantimu hari ini.\n\nSebelum melangkah, mari verifikasi terlebih dahulu:\n\nSiapakah yang memberimu coklat hari ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -11,13 +11,22 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "[🔸Selamat jawaban terkonfirmasi🔸] \n-------------------------------\n🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\n\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \n\nApakah kamu siap menyelesaikan misinya?",
+        text: "\n\n====================================\n ============S U C C E S S=============\n====================================\n\n\n=======Jawaban berhasil diverifikasi=======",
+        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
+        choices: [
+            { text: "Lanjut 🚀", nextNode: 'monoLog', type: 'primary' }
+        ]
+    },
+    monoLog: {
+        text: "🛡️    Gerbang Memori yang Terkunci    🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan kejutannya..\n\nDi balik gerbang utama yang terkunci itu, sebuah momen berharga telah menantimu di ujung jalan. \n\nApakah kamu siap menyelesaikan misinya?",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Mulai Petualangan 🚀", nextNode: 'start', type: 'primary' }
         ]
     },
+    
     start: {
         text: "Pada suatu hari kamu terbangun disebuah ruangan remang-remang berwarna coklat muda. Udara terasa dingin dan berbau besi. Di depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
         illustration: "🛏️🌑❓",
@@ -48,14 +57,13 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-             { text: "Periksa laci meja di sudut ruangan 🗄️", nextNode: 'periksaLaci', type: 'danger' },
             { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' },
         
         ]
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n Merah adalah clue kedua untuk menemukan kunci",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -65,33 +73,56 @@ const storyNodes = {
     },
     
     ruangJebakan: {
-        text: "<em>*BRAAAKK!!*</em><br><br>Begitu kamu melangkah masuk, pintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan samar-samar kamu mendengar suara detak jam dinding yang berputar sangat cepat.<br><br>Di depanmu hanya ada tiga tombol darurat berwarna kusam. Atmosfer ruangan semakin mencekam, kamu harus segera keluar!",
-        illustration: "🛏️🌑❓",
+        text: "*BRAAAKK!!*\nBegitu kamu melangkah masuk, pintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan samar-samar kamu mendengar suara detak jam dinding yang berputar sangat cepat.\nDi depanmu hanya ada tiga tombol darurat berwarna kusam. Atmosfer ruangan semakin mencekam, kamu harus segera keluar!",
+        illustration: "🧟🍃🪵",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "🔴 Tekan Tombol Merah", nextNode: "jebakanZonk" },    // Salah (Gagal)
-            { text: "🟢 Tekan Tombol Hijau", nextNode: "jebakanLolos" },   // Benar (Selamat)
-            { text: "🔵 Tekan Tombol Biru", nextNode: "jebakanZonk" }     // Salah (Gagal)
+            { text: "🟢 Tekan Tombol Hijau",
+            type:'danger', nextNode: "jebakanDalam" },   // Benar (Selamat)
+            { text: "🔵 Tekan Tombol Biru", nextNode: "jebakanZonk",
+            takeDamage:true, type:'danger'},
+            { text: "🔴 Tekan Tombol Merah",
+            type:'danger',
+            nextNode: "jebakanZonk2" },    // Salah (Gagal)// Salah (Gagal)
         ]
     },
 
     // A. Kondisi Jika Selamat / Lolos
-    jebakanLolos: {
-        text: "<em>*KLIK... BZZZT*</em><br><br>Terdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser terbuka kembali! Tanpa berpikir panjang, kamu langsung berlari keluar menuju lorong yang lebih aman.",
-        illustration: "🛏️🌑❓",
-        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+    jebakanDalam: {
+        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Apakah barang favorit pemilik game ini?",
+        illustration: "🕸️🍃🚧",
+        isPasswordNode: true,
+        passwordCorrectNode: 'sandiBenar1',
+        correctPassword: "laptop",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
+        
+    },
+        sandiBenar1: {
+        text: "\nJawaban kamu benar, kamu berhasil keluar dari ruangan ini, \n\nCari kunci emas untuk membuka gerbang utama",
+        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
-            { text: "Lari Kembali ke Lorong", nextNode: "pilihanLorong" } // Kembali selamat ke lorong
+            { text: "Keluar ruangan, dan mencari kunci🔑", nextNode: 'pilihanLorong', type: 'primary' }
         ]
     },
-
     // B. Kondisi Jika Zonk / Gagal
     jebakanZonk: {
-        text: "<em>*TIIIT... TIIIT... TIIIT!*</em><br><br>Alarm berbunyi nyaring! Tiba-tiba terdengar suara tawa misterius yang menggema di langit-langit, dan ruangan mendadak menjadi gelap gulita! Kamu panik dan pingsan karena ketakutan...<br><br>(Tenang, petualanganmu belum berakhir. Kamu terbangun kembali di lorong luar.)",
-        illustration: "🛏️🌑❓",
+        text: "*TIIIT... TIIIT... TIIIT!*\nAlarm berbunyi nyaring! Tiba-tiba terdengar suara tawa misterius yang menggema di langit-langit, dan ruangan mendadak menjadi gelap gulita! Kamu panik dan pingsan karena ketakutan...(1 Nyawa hilang)",
+        illustration: "👻🌚💢",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        takeDamage:true, type:'danger',
         choices: [
-            { text: "Coba Bangkit Kembali", nextNode: "pilihanLorong" } // Dihukum kembali ke lorong awal
+            { text: "Coba Bangkit Kembali🕹️", nextNode: "pilihanLorong" } // Dihukum kembali ke lorong awal
+        ]
+    },
+    
+    jebakanZonk2: {
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...",
+        illustration: "✨⚔️👏",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        
+        choices: [
+            { text: "Buka laci 🧲", type:'primary', nextNode: "periksaLaci" } // Dihukum kembali ke lorong awal
         ]
     },
     kamarMandiMisterius: {
@@ -152,7 +183,7 @@ const storyNodes = {
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue pertama Kunci emas",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
