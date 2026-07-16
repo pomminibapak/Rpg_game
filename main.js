@@ -8,7 +8,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Bersedia🚀", nextNode: 'welcome', type: 'primary' },
-            { text: "Males ah !!🥵", nextNode: 'tolak', type: 'primary' }
+            { text: "Males ah !!🥵", nextNode: 'tolak', type: 'secondary' }
         ]
     },
     tolak: {
@@ -36,7 +36,7 @@ const storyNodes = {
         ]
     },
     monoLog: {
-        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sebuah momen berharga telah menantimu di ujung jalan. \n\nApakah kamu siap menyelesaikan misinya?",
+        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sesuatu akan mengejutkanmu..\n\nApakah kamu siap menyelesaikan misinya?",
         illustration: "⚔️💫💢",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -45,11 +45,11 @@ const storyNodes = {
     },
     
     start: {
-        text: "Pada suatu hari kamu terbangun disebuah ruangan. Udara terasa dingin dan berbau besi.\n\nDi depanmu ada beberapa jalan, tapi hati-hati... langkah yang salah bisa berakibat fatal.",
+        text: "Pada suatu hari kamu terbangun disebuah ruangan. Udara terasa dingin dan berbau besi.\n\nDi depanmu ada beberapa jalan, tapi hati-hati, langkah yang salah bisa berakibat fatal.",
         illustration: "🛏️🌑❓",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Masuk ke pintu sebelah kiri yang berderit 🚪", nextNode: 'kamarMandiMisterius', type: 'secondary' },
+            { text: "Masuk ke pintu sebelah kiri🚪", nextNode: 'kamarMandiMisterius', type: 'secondary' },
            
             { text: "Mendekati cermin besar di dinding 🪞", nextNode: 'jebakanCermin', type: 'secondary' },
             { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pilihanLorong', type: 'secondary' }
@@ -87,7 +87,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n Merah adalah clue kedua untuk menemukan kunci kuno",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n 🔴 adalah clue untuk menemukan kunci kuno",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
