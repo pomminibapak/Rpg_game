@@ -28,7 +28,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "\n\n==================================\n ===========S U C C E S S============\n==================================\n\n\n======Jawaban berhasil diverifikasi======",
+        text: "\n\n=============================\n =========S U C C E S S==========\n=============================\n\n\n===Jawaban berhasil diverifikasi===",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
