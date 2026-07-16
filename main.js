@@ -2,6 +2,23 @@
 // 1. STRUKTUR DATA CERITA (DENGAN GAME PENUTUP)
 // ==========================================
 const storyNodes = {
+    welcome1: {
+        text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantimu hari ini.\n\n Apakah kamu bersedia bermaini?",
+        illustration: "🍬🚥🎳",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
+        choices: [
+            { text: "Bersedia🚀", nextNode: 'welcome', type: 'primary' },
+            { text: "Males ah !!🥵", nextNode: 'tolak', type: 'primary' }
+        ]
+    },
+    tolak: {
+        text: "\n\n\nYah!!! Ayo dong Mau?🤗🤗",
+        illustration: "🎪🎠⚔️",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
+        choices: [
+            { text: "Baiklah🚀", nextNode: 'welcome', type: 'primary' }
+        ]
+    },
     welcome: {
         text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantimu hari ini.\n\nSebelum melangkah, mari verifikasi terlebih dahulu:\n\nSiapakah yang memberimu coklat hari ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
@@ -783,5 +800,5 @@ function showChoices(node, nodeKey) {
 }
 
 // Menjalankan Game Pertama Kali
-showStoryNode('welcome');
+showStoryNode('welcome1');
 updateHPDisplay();
