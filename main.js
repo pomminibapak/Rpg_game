@@ -60,7 +60,7 @@ const storyNodes = {
         illustration: "🎯⚒️🗄️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Langsung menuju pintu keluar 🚪", nextNode: 'welcome1', type: 'secondary' }
+            { text: "Telusuri ruangan🚪", nextNode: 'start', type: 'secondary' }
         ]
     },
     pilihanLorong: {
@@ -204,7 +204,7 @@ const storyNodes = {
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Kuno 🔑", requiredItem: "Kunci Kuno", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Cari kunci kuno🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
+            { text: "Cari kunci kuno🏃‍♂️", nextNode: 'cariKunci', type: 'secondary' }
         ]
     },
     jebakanTombol: {
