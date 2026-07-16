@@ -3,7 +3,7 @@
 // ==========================================
 const storyNodes = {
     welcome1: {
-        text: "Hai Adik Junior! Ada sebuah petualangan kecil yang menantimu hari ini.\n\n Apakah kamu bersedia bermaini?",
+        text: "Hai Adik Junior!\nAda sebuah petualangan kecil yang menantimu hari ini.\n\n Apakah kamu bersedia bermain?",
         illustration: "🍬🚥🎳",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -36,7 +36,7 @@ const storyNodes = {
         ]
     },
     monoLog: {
-        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan... khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sesuatu akan mengejutkanmu..\n\nApakah kamu siap menyelesaikan misinya?",
+        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan, khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sesuatu akan mengejutkanmu..\n\nApakah kamu siap menyelesaikan misinya?",
         illustration: "⚔️💫💢",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -56,7 +56,7 @@ const storyNodes = {
         ]
     },
     cariKunci: {
-        text: "Untuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong untuk membuka gerbang.",
+        text: "Untuk Membuka gerbang kamu membutuhkan Kunci kuno.\nUntuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong dan kembali ke gerbang utama.",
         illustration: "🎯⚒️🗄️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -87,7 +87,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n 🔴 adalah clue untuk menemukan kunci kuno",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -182,7 +182,7 @@ const storyNodes = {
         choices: [{ text: "Merangkak kembali ke tengah ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanCermin: {
-        text: "Kamu berdiri di depan cermin. Aneh... bayanganmu tidak mengikuti gerakanmu! Tiba-tiba, tangan dari dalam cermin menarik kerah bajumu dengan kasar! Kamu berteriak dan berhasil lepas, tapi dadamu sesak karena kaget! (1 Nyawa Hilang).",
+        text: "Kamu berdiri di depan cermin. Aneh! Tiba-tiba muncul tangan dari dalam cermin dan menarik kerah bajumu, dadamu menjadi sesak karena kaget! (1 Nyawa Hilang).\n\n[perunjuk]\n-Pergi ke gerbang utama dan cari petunjuk berikutnya-",
         illustration: "🪞🖐️😨",
         bgClass: "bg-gradient-to-br from-purple-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -204,7 +204,7 @@ const storyNodes = {
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Kuno 🔑", requiredItem: "Kunci Kuno", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Cari kunci kuno🏃‍♂️", nextNode: 'cariKunci', type: 'secondary' }
+            { text: "Coba vara lain🏃‍♂️", nextNode: 'cariKunci', type: 'secondary' }
         ]
     },
     jebakanTombol: {
@@ -215,7 +215,7 @@ const storyNodes = {
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue untuk Kunci kuno",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n [Petunjuk]\n-Mendengarkan musik agar susana menjadi santai-",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -237,7 +237,7 @@ const storyNodes = {
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarim, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa.. 😁",
+        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa.. 😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
