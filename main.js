@@ -56,7 +56,7 @@ const storyNodes = {
         ]
     },
     cariKunci: {
-        text: "Untuk mencari kunci ada beberapa petunjuk di ruangan-ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong untuk membuka gerbang.",
+        text: "Untuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong untuk membuka gerbang.",
         illustration: "🎯⚒️🗄️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -64,7 +64,7 @@ const storyNodes = {
         ]
     },
     pilihanLorong: {
-        text: "Kamu melangkah keluar pintu ruang utama. Di depanmu ada lorong yang bercabang. Ke mana kamu ingin melangkah sekarang?",
+        text: "Kamu melangkah keluar. Di depanmu ada lorong yang bercabang. Ke mana kamu ingin melangkah sekarang?",
         illustration: "🛣️🎃🗺️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -97,7 +97,7 @@ const storyNodes = {
     },
     
     ruangJebakan: {
-        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang\nDi depanmu hanya ada tiga tombol, Atmosfer ruangan semakin mencekam, kamu harus segera keluar!",
+        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang\nDi depanmu hanya ada tiga tombol, kamu harus segera keluar!",
         illustration: "🧟🍃🪵",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -114,7 +114,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita, sore itu hujan dangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu masih ingat itu rumah siapa?",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita, sore itu hujan dangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu masih ingat itu rumah siapa?",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -158,7 +158,7 @@ const storyNodes = {
         ]
     },
     kamarMandiMisterius: {
-        text: "Kamu masuk ke ruangan gelap berbau lembap. Ada tetesan air yang ritmis: 'tik... tik... tik...'. Di depan ada kotak kado hijau dan wastafel tua.",
+        text: "Kamu masuk ke ruangan gelap berbau lembap. Ada tetesan air yang ritmis: 'tik... tik... tik...'. \nDi depan ada kotak kado hijau dan wastafel tua.",
         illustration: "💧🧼📦",
         bgClass: "bg-gradient-to-br from-slate-900 via-emerald-950/20 to-slate-950",
         choices: [
