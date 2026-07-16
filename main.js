@@ -11,7 +11,7 @@ const storyNodes = {
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "\n\n====================================\n ============S U C C E S S=============\n====================================\n\n\n=======Jawaban berhasil diverifikasi=======",
+        text: "\n\n==================================\n ===========S U C C E S S============\n==================================\n\n\n======Jawaban berhasil diverifikasi======",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -47,7 +47,7 @@ const storyNodes = {
             { text: "Masuk ke ruang santai🧋", nextNode: 'ruangSantai', type: 'danger' },
             { text: " Buka pintu besi berkarat🕸️", nextNode: 'ruangJebakan', type: 'danger' },
             { text: " Keluar menuju gerbang utama ⚔️", nextNode: 'pintuKeluar', type: 'danger' },
-            { text: "Kembali ke Ruangan Utama 🚪", nextNode: 'start', type: 'secondary' }
+            { text: "Kembali ke ruangan utama 🚪", nextNode: 'start', type: 'secondary' }
         ]
     },
     
@@ -89,16 +89,16 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Tuliskan plat nomor motor kamu.",
+        text: "*KLIK... BZZZT*\nTerdengar suara mesin hidrolik terbuka. Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita, sore itu hujan dangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu masih ingat itu kerumah siapa?",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
-        correctPassword: "scoopy",
+        correctPassword: "afri",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu benar, kamu berhasil keluar dari ruangan ini, \n\nCari kunci kuno untuk membuka gerbang utama",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat itu 😁sekarang kamu berhasil keluar dari ruangan ini, \n\nCari kunci kuno untuk membuka gerbang utama",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
