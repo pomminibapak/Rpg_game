@@ -142,8 +142,8 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n Benda apa yang pernah kamu beri untuk pemilik game ini?\n Clue: dua kata.",
-        illustration: "✨⚔️👏",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n Clue: dua kata.",
+        illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
         correctPassword: "botol minum",
@@ -215,7 +215,7 @@ const storyNodes = {
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue pertama Kunci kuno",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue untuk Kunci kuno",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
