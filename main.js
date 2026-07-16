@@ -63,7 +63,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n Merah adalah clue kedua untuk menemukan kunci emas",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n Merah adalah clue kedua untuk menemukan kunci kuno",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -98,7 +98,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu benar, kamu berhasil keluar dari ruangan ini, \n\nCari kunci emas untuk membuka gerbang utama",
+        text: "\nJawaban kamu benar, kamu berhasil keluar dari ruangan ini, \n\nCari kunci kuno untuk membuka gerbang utama",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -125,7 +125,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n Kamu berhasil membuka laci dan mendapatkan kunci emas untuk membuka gerbang utama",
+        text: "\nBerhasil, jawaban yang tepat. \n Kamu berhasil membuka laci dan mendapatkan kunci kuno untuk membuka gerbang utama",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -164,9 +164,9 @@ const storyNodes = {
         choices: [{ text: "Menjauh dari cermin dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
     },
     periksaLaci: {
-        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci Emas Berkilau'. Sepertinya ini hari keberuntunganmu.",
+        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci kuno Berdebu'. Sepertinya ini hari keberuntunganmu.",
         illustration: "🔑✨🧳",
-        item: "Kunci Emas",
+        item: "Kunci Kuno",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
         choices: [{ text: "Simpan kunci dan kembali ke lorong🏃‍♂️", nextNode: 'pilihanLorong', type: 'primary' }]
     },
@@ -177,9 +177,9 @@ const storyNodes = {
         choices: [
             { text: "Tekan tombol merah 'OPEN' biar cepat 🚨", nextNode: 'jebakanTombol', type: 'danger' },
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
-            { text: "Buka gerbang dengan Kunci Emas 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'danger' },
+            { text: "Buka gerbang dengan Kunci Kuno 🔑", requiredItem: "Kunci Emas", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Cari kunci emas🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
+            { text: "Cari kunci kuno🏃‍♂️", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
     jebakanTombol: {
@@ -190,7 +190,7 @@ const storyNodes = {
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue pertama Kunci emas",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n Pintu Besi adalah clue pertama Kunci kuno",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
