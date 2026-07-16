@@ -55,7 +55,14 @@ const storyNodes = {
             { text: "Langsung menuju pintu keluar 🚪", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
-    
+    cariKunci: {
+        text: "Untuk mencari kunci ada beberapa petunjuk di ruangan-ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong untuk membuka gerbang.",
+        illustration: "🎯⚒️🗄️",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Langsung menuju pintu keluar 🚪", nextNode: 'welcome1', type: 'secondary' }
+        ]
+    },
     pilihanLorong: {
         text: "Kamu melangkah keluar pintu ruang utama. Di depanmu ada lorong yang bercabang. Ke mana kamu ingin melangkah sekarang?",
         illustration: "🛣️🎃🗺️",
