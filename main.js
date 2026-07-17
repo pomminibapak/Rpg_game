@@ -123,7 +123,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat itu 😁sekarang kamu berhasil keluar dari ruangan ini, \n\nCari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nMomen itu bikin aku sadar, ternyata kamu teman kerja yang menyenangkan.\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia-",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
