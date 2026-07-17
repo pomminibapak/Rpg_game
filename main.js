@@ -114,7 +114,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita(ciknde permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita(cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.'",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -123,11 +123,11 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nMomen itu bikin aku sadar, ternyata kamu teman kerja yang menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu akhirnya aku sadar, ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
-            { text: "Keluar ruangan, dan mencari kunci🔑", nextNode: 'pilihanLorong', type: 'primary' }
+            { text: "Keluar ruangan, dan mencari kunci🔑", nextNode: 'ruangJebakan', type: 'primary' }
         ]
     },
     // B. Kondisi Jika Zonk / Gagal
@@ -142,7 +142,7 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan lagi:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n 🔑: Dua kata.",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan lagi:\n\n'Benda apa yang pernah kamu beri untuk pemilik game ini?'\n 🔑: Dua kata.",
         illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
@@ -150,7 +150,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya. Terima kasih.\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya. Terima kasihbanyak ya.\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -204,7 +204,7 @@ const storyNodes = {
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Kuno 🔑", requiredItem: "Kunci Kuno", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
-            { text: "Coba vara lain🏃‍♂️", nextNode: 'cariKunci', type: 'secondary' }
+            { text: "Coba cara lain🏃‍♂️", nextNode: 'cariKunci', type: 'secondary' }
         ]
     },
     jebakanTombol: {
@@ -215,7 +215,7 @@ const storyNodes = {
         choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n [Petunjuk]\n-Mendengarkan musik agar susana menjadi santai-",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n [Petunjuk]\n-Mendengarkan musik agar susana menjadi santai- disana ada petunjuk berikutnya.",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -242,7 +242,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang melimpah, dan kekuatan untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
+        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
@@ -309,8 +309,8 @@ const storyNodes = {
 // 2. STATE SISTEM GAME & SLIDE FOTO
 // ==========================================
 let currentItem = "Tangan Kosong";
-let maxHP = 4; 
-let playerHP = 4; 
+let maxHP = 5; 
+let playerHP = 5; 
 const daftarFoto = ["bersama1.jpg", "bersama2.jpg", "bersama3.jpg"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
@@ -347,10 +347,10 @@ const bgmHadiah = document.getElementById('bgm-hadiah');
 
 
 let typewriterTimeout; 
-bgmHbd.volume = 0.4;
-bgmRomantis.volume = 0.8;
-bgmHadiah.volume = 0.4;
-if (bgmSantai) bgmSantai.volume = 0.5; 
+bgmHbd.volume = 1;
+bgmRomantis.volume = 1;
+bgmHadiah.volume = 1;
+if (bgmSantai) bgmSantai.volume = 1; 
 
 closeModalBtn.addEventListener('click', () => { photoModal.classList.remove('modal-active'); });
 
