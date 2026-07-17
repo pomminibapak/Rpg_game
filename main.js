@@ -311,7 +311,7 @@ const storyNodes = {
 let currentItem = "Tangan Kosong";
 let maxHP = 5; 
 let playerHP = 5; 
-const daftarFoto = ["bersama1.jpg", "bersama2.jpg", "bersama3.jpg"];
+const daftarFoto = ["bersama1.png", "bersama2.png", "bersama3.png", "bersama 4.png"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
 
@@ -378,7 +378,7 @@ function jalankanSlideshowOtomatis() {
     autoSlideInterval = setInterval(() => {
         indeksFotoAktif = (indeksFotoAktif + 1) % daftarFoto.length;
         perbaruiTampilanSlide();
-    }, 1000);
+    }, 1300);
 }
 
 prevSlideBtn.addEventListener('click', () => {
