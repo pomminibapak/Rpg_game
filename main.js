@@ -101,11 +101,11 @@ const storyNodes = {
         illustration: "🧟🍃🪵",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "🟢 Tekan Tombol Hijau",
-            type:'danger', nextNode: "jebakanDalam" },
-            { text: "🔵 Tekan Tombol Biru", nextNode: "jebakanZonk",
-            takeDamage:true, type:'danger'},
             { text: "🔴 Tekan Tombol Merah",
+            type:'danger', nextNode: "jebakanDalam" },
+            { text: "🟢 Tekan Tombol Hijau", nextNode: "jebakanZonk",
+            takeDamage:true, type:'danger'},
+            { text: "🔵 Tekan Tombol Biru",
             type:'danger',
             nextNode: "jebakanZonk2" },
             { text: "Kembali ke lorong 🛤️", nextNode: "pilihanLorong", type:'primary'}
@@ -114,7 +114,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita(ciknde permai), sore itu hujan sangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita(ciknde permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -123,7 +123,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nMomen itu bikin aku sadar, ternyata kamu teman kerja yang menyenangkan.\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia-",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nMomen itu bikin aku sadar, ternyata kamu teman kerja yang menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -142,7 +142,7 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n 🔑: dua kata.",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan lagi:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n 🔑: Dua kata.",
         illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
@@ -150,7 +150,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n Kamu dapat membuka laci sekarang juga",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya. Terima kasih.\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
