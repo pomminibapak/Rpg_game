@@ -87,7 +87,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶🎧\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCona dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi😱\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
