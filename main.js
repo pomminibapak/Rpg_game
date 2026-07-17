@@ -114,7 +114,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita, sore itu hujan dangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu masih ingat itu rumah siapa?",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini\n\n Suatu hari kita pernah berkunjung ke rumah teman kerja kita(ciknde permai), sore itu hujan sangat deras, saat pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -142,7 +142,7 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n Clue: dua kata.",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya...\n Eitss!! untuk membuka laci ada satu pertanyaan:\n\nBenda apa yang pernah kamu beri untuk pemilik game ini?\n 🔑: dua kata.",
         illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
@@ -168,7 +168,7 @@ const storyNodes = {
         ]
     },
     jebakanKado: {
-        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 Nyawa Hilang).",
+        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 Nyawa Hilang).\n[Petunjuk]\n-Pergi ke gerbang utama, cari petunjuk lain-",
         illustration: "🤡💥💔",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
@@ -222,7 +222,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n Clue : Tanggal Spesial (ddmmyyyy)",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
