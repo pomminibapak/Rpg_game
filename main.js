@@ -150,7 +150,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya. Terima kasihbanyak ya.\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya.\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -311,7 +311,7 @@ const storyNodes = {
 let currentItem = "Tangan Kosong";
 let maxHP = 5; 
 let playerHP = 5; 
-const daftarFoto = ["bersama1.png", "bersama2.png", "bersama3.png", "bersama 4.png"];
+const daftarFoto = ["bersama1.png", "bersama2.png", "bersama3.png", "bersama4.png"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
 
@@ -378,7 +378,7 @@ function jalankanSlideshowOtomatis() {
     autoSlideInterval = setInterval(() => {
         indeksFotoAktif = (indeksFotoAktif + 1) % daftarFoto.length;
         perbaruiTampilanSlide();
-    }, 1300);
+    }, 3000);
 }
 
 prevSlideBtn.addEventListener('click', () => {
