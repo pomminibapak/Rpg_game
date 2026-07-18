@@ -20,7 +20,7 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\nSebelum melangkah, mari verifikasi terlebih dahulu:\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "\n\nSebelum melangkah, mari verifikasi terlebih dahulu.\n\nSiapakah yang memberimu coklat hari ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -36,7 +36,7 @@ const storyNodes = {
         ]
     },
     monoLog: {
-        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan, khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana: jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sesuatu akan mengejutkanmu..\n\nApakah kamu siap menyelesaikan misinya?",
+        text: "🛡️Gerbang Memori yang Terkunci🔐\n\nSelamat datang di sebuah ruang kecil berisikan petualangan, tempat di mana setiap sudutnya menyimpan potongan memori yang sengaja disimpan, khusus untukmu.\n\nDi depanmu ada ruangan penuh rahasia. Tugasmu sederhana,  jelajahi setiap sudutnya, hidupkan melodinya, dan temukan petunjuk tersembunyi untuk menyelesaikan misi ini.\n\nDi balik gerbang utama yang terkunci, sesuatu akan mengejutkanmu..\n\nApakah kamu siap menyelesaikan misinya?",
         illustration: "⚔️💫💢",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -114,11 +114,11 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita(cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:Bareng egi dan ibad juga.'",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita(cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:'Nama lengkap'",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
-        correctPassword: "afri",
+        correctPassword: "afri lestari",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
         
     },
@@ -142,7 +142,7 @@ const storyNodes = {
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan untuk mu..\n\n'Barang apa yang pernah kamu beri untuk pemilik game ini?'\n 🔑: Dua kata",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan untuk mu..\n\n'Barang apa yang pernah kamu beri untuk pemilik game ini?'\n 🔑: 'Dua kata'",
         illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
