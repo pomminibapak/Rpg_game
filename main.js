@@ -80,8 +80,9 @@ const storyNodes = {
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-            { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' },
+            { text: "Nyalakan musik 1 ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+            {text: "Nyalakan musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' }
         
         ]
     },
@@ -92,6 +93,15 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' }
+            
+        ]
+    },
+    ruangSantaiMusikOn1: {
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, biar bisa ku putar terus kalo lagi buka ini✨",
+        illustration: "🎶🎊✨",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Matikan musik ⏹️", nextNode: 'aksiStopMusik1', type: 'danger' }
             
         ]
     },
@@ -242,7 +252,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.,\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu.\n Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nTetap semangat bekerja dan tetap fokus kuliahnya.\n\nSenang bisa mendengar dan berbagi cerita denganmu, Banyak cerita yang ingin aku tulis disini sebenarnya, tapi sepertinya itu tidak perlu.\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\nCheers for another great year ahead, Happy Birthday! ",
+        text: "Hey adik Junior.,\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu.\n Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nTetap semangat bekerja dan tetap fokus kuliahnya.\n\nSenang bisa mendengar dan berbagi cerita denganmu, Banyak cerita yang ingin aku tulis disini sebenarnya, tapi sepertinya itu tidak perlu, senang bisa  menjadi tteman kerjamu  \n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\nCheers for another great year ahead, Happy Birthday! ",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
@@ -318,6 +328,7 @@ let autoSlideInterval = null;
 // ==========================================
 // 3. REFERENSI ELEMEN DOM
 // ==========================================
+const bgmSantai1 = document.getElementById('bgm-santai1');
 const bgmSantai = document.getElementById('bgm-santai');
 const bgScreen = document.getElementById('bg-screen');
 const storyTextElement = document.getElementById('story-text');
@@ -398,9 +409,9 @@ nextSlideBtn.addEventListener('click', () => {
 function stopAllMusic() {
     bgmHbd.pause(); bgmHbd.currentTime = 0;
     bgmRomantis.pause(); bgmRomantis.currentTime = 0;
-    bgmHadiah.pause(); bgmHadiah.currentTime = 0; // Tambahkan baris ini
-    // Tambahkan baris di bawah ini:
+    bgmHadiah.pause(); bgmHadiah.currentTime = 0;
     if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
+    if (bgmSantai1) { bgmSantai1.pause(); bgmSantai1.currentTime = 0; }
 }
 
 function updateHPDisplay() {
@@ -615,9 +626,19 @@ function showStoryNode(nodeKey) {
         showStoryNode('ruangSantaiMusikOn'); // Alihkan visual ke tombol Matikan Musik
         return; // Menghentikan sisa proses ke bawah
     }
-    
+     if (nodeKey === 'aksiPutarMusik1') {
+        stopAllMusic();
+        if (bgmSantai) bgmSantai1.play().catch(e => {});
+        showStoryNode('ruangSantaiMusikOn1'); // Alihkan visual ke tombol Matikan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
     if (nodeKey === 'aksiStopMusik') {
         if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
+        showStoryNode('ruangSantai'); // Kembalikan visual ke tombol Nyalakan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
+    if (nodeKey === 'aksiStopMusik1') {
+        if (bgmSantai) { bgmSantai1.pause(); bgmSantai.currentTime = 0; }
         showStoryNode('ruangSantai'); // Kembalikan visual ke tombol Nyalakan Musik
         return; // Menghentikan sisa proses ke bawah
     }
