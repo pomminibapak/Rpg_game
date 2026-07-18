@@ -56,11 +56,11 @@ const storyNodes = {
         ]
     },
     cariKunci: {
-        text: "Untuk Membuka gerbang kamu membutuhkan Kunci kuno.\nUntuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong dan kembali ke gerbang utama.",
+        text: "Untuk Membuka gerbang kamu membutuhkan Kunci kuno.\nUntuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam tas dan kembali ke gerbang utama.",
         illustration: "🎯⚒️🗄️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Telusuri ruangan🚪", nextNode: 'start', type: 'secondary' }
+            { text: "Telusuri ruangan🚪", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
     pilihanLorong: {
@@ -76,12 +76,12 @@ const storyNodes = {
     },
     
     ruangSantai: {
-        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n kamu bisa menyalakan musik.. 💫",
+        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n Coba menyalakan musik, agar lebih tenang 💫",
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Nyalakan musik 1 ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-            {text: "Nyalakan musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: "Putar musik 1 ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+            {text: "Putar musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
             { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' }
         
         ]
@@ -97,7 +97,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, biar bisa ku putar terus kalo lagi buka ini✨",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu putar disini✨",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -107,7 +107,7 @@ const storyNodes = {
     },
     
     ruangJebakan: {
-        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang\nDi depanmu hanya ada tiga tombol, kamu harus segera keluar!",
+        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang.\nDi depanmu hanya ada tiga tombol, kamu harus segera keluar!",
         illustration: "🧟🍃🪵",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -124,7 +124,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita(cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:'Nama lengkap'",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita (cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil,\n Apakah kamu ingat ke rumah siapa saat itu?\n🔑: 'Nama lengkap'",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -133,7 +133,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu akhirnya aku sadar, ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu aku sadar, ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini. \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -160,7 +160,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ingin tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya.\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ingin tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya..🙃\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>SUCCESS!!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -232,7 +232,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial kamu.. (ddmmyyyy)",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala : \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial kamu.. (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -252,7 +252,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.,\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu.\n Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nTetap semangat bekerja dan tetap fokus kuliahnya.\n\nSenang bisa mendengar dan berbagi cerita denganmu, Banyak cerita yang ingin aku tulis disini sebenarnya, tapi sepertinya itu tidak perlu, senang bisa  menjadi tteman kerjamu  \n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\nCheers for another great year ahead, Happy Birthday! ",
+        text: "Hey Adik Junior.,\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu.\n Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nTetap semangat bekerja dan tetap fokus kuliahnya.\n\nSenang bisa mendengar dan berbagi cerita denganmu, Banyak cerita yang ingin aku tulis disini sebenanya, tapi sepertinya itu tidak perlu, senang bisa  menjadi tteman kerjamu  \n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\nCheers for another great year ahead, Happy Birthday! ",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
