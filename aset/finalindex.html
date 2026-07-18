@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petualangan Adik Junior</title>
+    <title>Petualangan Special</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
@@ -82,7 +82,7 @@
 
     <div class="bg-slate-900/40 border-b border-slate-800/50 p-4 sticky top-0 backdrop-blur-md z-40 flex justify-between items-center shadow-md">
         <div class="text-xs bg-slate-950/80 border border-slate-800 px-3 py-1.5 rounded-full font-medium">
-            HP: <span id="player-hp" class="tracking-wider text-base">❤️❤️❤️</span>
+            👸: <span id="player-hp" class="tracking-wider text-base">❤️❤️❤️</span>
         </div>
         <div class="text-xs bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-full font-medium">
             🎒 Kantong: <span id="player-item" class="text-yellow-400 font-bold">Tangan Kosong</span>
@@ -98,7 +98,7 @@
 
             <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
                 <div id="story-container">
-                    <p id="story-text" class="text-base md:text-lg leading-relaxed text-slate-200 font-normal"></p>
+                    <p id="story-text" class="text-base md:text-lg leading-relaxed text-slate-200 justify-center font-normal"></p>
                 </div>
 
                 <div id="password-container" class="hidden space-y-2">
@@ -115,20 +115,24 @@
 
         <div id="photo-modal">
         <div class="modal-box">
-            <h3 class="text-2xl font-black text-pink-500 mb-4 animate-bounce tracking-wide font-sans">
-                YEYYY!!! 🎉
-            </h3>
-            <div class="w-full bg-white p-3 pb-4 rounded-xl shadow-2xl mb-4 transform rotate-[-1deg]">
-                <img src="foto.jpg" alt="Foto Ulang Tahun" class="w-full h-auto rounded border border-slate-200 object-cover block mx-auto mb-3">
-                <p class="text-slate-800 font-bold text-sm tracking-wide font-mono">
-                    ✨ Happy Birthday to You ✨
+           
+            <div class="animate-bounce w-full bg-white p-3 pb-4 rounded-xl shadow-2xl mb-4 transform ">
+                 <h4 class="text-2xl font-black text-pink-500 mb-4 m-10 tracking-wide font-sans">
+                YEYYY KAMU BERHASIL !!! 🎉🎉
+            </h4>
+                <img src="foto.png" alt="Foto Ulang Tahun" class="w-full h-auto rounded border border-slate-200 object-cover block mx-auto mb-3">
+                <p class="text-slate-800 font-bold text-m tracking-wide font-mono">
+                    ✨ Happy Birthday ✨
+                </p>
+                <p class="text-slate-800 font-bold text-m tracking-wide font-mono">
+                    ✨ Adik Junior ✨
                 </p>
             </div>
-            <p class="text-xs text-slate-400 mb-4 px-2 italic">
-                "Gerbang telah terbuka, petualangan barumu di usia baru dimulai hari ini!"
+            <p class="text-s text-slate-400 mb-4 px-2 italic">
+                "Gerbang telah terbuka, petualangan baru di usia barumu dimulai hari ini!"
             </p>
             <button id="close-modal" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-xl text-xs transition-colors duration-200 cursor-pointer shadow-md active:scale-95 transform font-sans uppercase tracking-wider border border-pink-400">
-                Tutup Bingkai & Lanjutkan ❌
+                Tutup Bingkai ❌
             </button>
         </div>
     </div>
@@ -136,11 +140,11 @@
         <div id="photo-dua-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.96); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
         <div class="modal-box">
             <h3 class="text-2xl font-black text-yellow-500 mb-4 animate-pulse tracking-wide font-sans">
-                OUR MOMENTS 💖
+                ✨ OUR MOMENTS ✨
             </h3>
             
-            <div class="w-full bg-white p-3 pb-3 rounded-xl shadow-2xl mb-3 transform rotate-[1deg] relative">
-                <img id="slide-img" src="bersama1.jpg" alt="Foto Bersama" class="w-full h-auto rounded border border-slate-200 object-cover block mx-auto mb-2 transition-all duration-300">
+            <div class="w-full bg-white p-3 pb-3 rounded-xl shadow-2xl mb-3 transform relative">
+                <img id="slide-img" src="bersama1.png" alt="Foto Bersama" class="w-full h-auto rounded border border-slate-200 object-cover block mx-auto mb-2 transition-all duration-300">
                 
                               <div class="flex justify-between items-center px-1 mb-2">
                     <button id="prev-slide" class="bg-slate-800 hover:bg-slate-700 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold active:scale-95 transition-transform">◀</button>
@@ -150,12 +154,12 @@
 >
                 
                 <p class="text-slate-800 font-bold text-sm tracking-wide font-mono text-center border-t pt-2 border-slate-100">
-                    ✨ Bersamamu itu Indah ✨
+                    ✨ Kebersamaan yang Indah ✨
                 </p>
             </div>
             
             <p class="text-xs text-slate-400 mb-4 px-2 italic">
-                "Terima kasih sudah berjalan sejauh ini. Semoga kita selalu bersama di setiap petualangan berikutnya!"
+                "Terima kasih sudah menjadi rekan kerja yang baik. Semoga bisa terus bekerja sama di setiap petualangan berikutnya!"
             </p>
             <button id="close-photo-dua" class="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold py-3 rounded-xl text-xs transition-colors duration-200 cursor-pointer shadow-md active:scale-95 transform font-sans uppercase tracking-wider border border-amber-400">
                 Selesai & Kunci Game 🔒
@@ -163,10 +167,13 @@
         </div>
     </div>
 
-
+    <audio id="bgm-hadiah" src="lagu-hadiah.mp3" loop></audio>
     <audio id="sound-click" src="click.mp3" preload="auto"></audio>
     <audio id="bgm-hbd" src="hbd.mp3" preload="auto" loop></audio>
     <audio id="bgm-romantis" src="romantis.mp3" preload="auto" loop></audio>
+    <audio id="bgm-santai" src="lagu-santai.mp3" loop></audio>
+
+
 
     <script src="main.js"></script>
 </body>

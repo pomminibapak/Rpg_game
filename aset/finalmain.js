@@ -222,7 +222,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial kamu.. (ddmmyyyy)",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -230,14 +230,14 @@ const storyNodes = {
         correctPassword: "20072003"
     },
     endingGagal: {
-        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)\n\n[Petunjuk]\n-Cari tombol 🔵 dan masuk kedalamnya-",
+        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)",
         illustration: "🙀💥🚪",
         takeDamage : true,
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉🎉 BIP! BIP! PIN Benar!\n Gerbang terbuka luas! \nCahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini!\nDan SELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu selalu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa..😁",
+        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini!\nDan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu selalu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa..😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
