@@ -242,7 +242,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
+        text: "Hey adik Junior.,\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu.\n Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨\nTetap semangat bekerja dan tetap fokus kuliahnya.\n\nSenang bisa mendengar dan berbagi cerita denganmu, Banyak cerita yang ingin aku tulis disini sebenarnya, tapi sepertinya itu tidak perlu.\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\nCheers for another great year ahead, Happy Birthday! ",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
@@ -281,7 +281,7 @@ const storyNodes = {
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak3: {
-        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan Paripurna! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur!' 🌿🌻",
+        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur!' 🌿🌻",
         illustration: "🎀🌿✨",
         bgClass: "bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
