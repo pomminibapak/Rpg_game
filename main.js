@@ -87,7 +87,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCona dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi😱\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCoba  dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi..😱\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -132,17 +132,17 @@ const storyNodes = {
     },
     // B. Kondisi Jika Zonk / Gagal
     jebakanZonk: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nAlarm berbunyi nyaring! Tiba-tiba terdengar suara tawa misterius yang menggema di langit-langit, dan ruangan mendadak menjadi gelap gulita! Kamu panik dan pingsan karena ketakutan...(1 Nyawa hilang)",
+        text: "*TIIIT... TIIIT... TIIIT!*\nAlarm berbunyi nyaring! Terdengar suara tawa misterius yang menggema di langit-langit, dan ruangan menjadi gelap gulita! Kamu panik dan pingsan karena ketakutan...\n(1 Nyawa hilang)",
         illustration: "👻🌚💢",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         takeDamage:true, type:'danger',
         choices: [
-            { text: "Coba Bangkit Kembali🕹️", nextNode: "pilihanLorong" } // Dihukum kembali ke lorong awal
+            { text: "Coba Bangkit Kembali🕹️", nextNode: "ruangJebakan" }
         ]
     },
     
     jebakanZonk2: {
-        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan lagi:\n\n'Benda apa yang pernah kamu beri untuk pemilik game ini?'\n 🔑: Dua kata.",
+        text: "*TIIIT... TIIIT... TIIIT!*\nTiba tiba pintu rahasia terbuka dan terdapat laci didalamnya.\n Eitss!! untuk membuka laci ada satu pertanyaan untuk mu..\n\n'Barang apa yang pernah kamu beri untuk pemilik game ini?'\n 🔑: Dua kata",
         illustration: "✨🧋🌟",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar2',
@@ -150,15 +150,15 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ngga tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅tapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya.\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
-        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ingin tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya.\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>SUCCESS!!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
             { text: "Buka laci 🧲", type:'primary', nextNode: "periksaLaci" } // Dihukum kembali ke lorong awal
         ]
     },
     kamarMandiMisterius: {
-        text: "Kamu masuk ke ruangan gelap berbau lembap. Ada tetesan air yang ritmis: 'tik... tik... tik...'. \nDi depan ada kotak kado hijau dan wastafel tua.",
+        text: "Kamu masuk ke ruangan gelap berbau lembap. Ada tetesan air yang ritmis: 'tik... tik... tik...'. \nDi depan ada kotak kado hijau dan wastafel tua. Ayo periksa..",
         illustration: "💧🧼📦",
         bgClass: "bg-gradient-to-br from-slate-900 via-emerald-950/20 to-slate-950",
         choices: [
@@ -168,28 +168,28 @@ const storyNodes = {
         ]
     },
     jebakanKado: {
-        text: "Saat kamu membuka kado, sesuatu yang tajam melompat keluar! Kamu terpeleset lantai basah dan jatuh terjerembab! Sakit sekali... (1 Nyawa Hilang).\n[Petunjuk]\n-Pergi ke gerbang utama, cari petunjuk lain-",
+        text: "Saat kamu membuka kado, sesuatu yang tajam melompat! Kamu terpeleset dan jatuh terjerembab! Sakit sekali... \n(1 Nyawa Hilang).\n\n[Petunjuk]\n-Pergi ke gerbang utama, cari petunjuk lain-",
         illustration: "🤡💥💔",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
         choices: [{ text: "Bangun dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanAir: {
-        text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! (1 Nyawa Hilang).",
+        text: "Saat kamu mendekat, kabel listrik yang terkelupas di wastafel menyambar jarimu! BZZZT! Kamu terlempar ke dinding! \n(1 Nyawa Hilang).",
         illustration: "⚡💔😱",
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
         choices: [{ text: "Merangkak kembali ke tengah ruangan 🏃‍♂️", nextNode: 'kamarMandiMisterius', type: 'secondary' }]
     },
     jebakanCermin: {
-        text: "Kamu berdiri di depan cermin. Aneh! Tiba-tiba muncul tangan dari dalam cermin dan menarik kerah bajumu, dadamu menjadi sesak karena kaget! (1 Nyawa Hilang).\n\n[perunjuk]\n-Pergi ke gerbang utama dan cari petunjuk berikutnya-",
-        illustration: "🪞🖐️😨",
+        text: "Kamu berdiri di depan cermin aneh!, Tiba-tiba muncul tangan dari dalam cermin dan menarik kerah bajumu, dadamu menjadi sesak karena kaget! \n(1 Nyawa Hilang).\n\n[perunjuk]\n-Pergi ke gerbang utama dan cari petunjuk berikutnya-",
+        illustration: "🪞😨🧟",
         bgClass: "bg-gradient-to-br from-purple-950/30 via-slate-950 to-slate-950",
         takeDamage: true,
         choices: [{ text: "Menjauh dari cermin dan kembali ke tengah ruangan 🏃‍♂️", nextNode: 'start', type: 'secondary' }]
     },
     periksaLaci: {
-        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci kuno Berdebu'. Sepertinya ini hari keberuntunganmu.",
+        text: "Kamu dengan hati-hati membuka laci. Di dalamnya tergeletak sebuah 'Kunci kuno Berdebu🗝️'. Sepertinya ini hari keberuntunganmu.",
         illustration: "🔑✨🧳",
         item: "Kunci Kuno",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-pink-950/40",
@@ -200,7 +200,7 @@ const storyNodes = {
         illustration: "🐲🚪🚨",
         bgClass: "bg-gradient-to-br from-cyan-950/40 via-slate-950 to-slate-950",
         choices: [
-            { text: "Tekan tombol merah 'OPEN' biar cepat 🚨", nextNode: 'jebakanTombol', type: 'danger' },
+            { text: "Tekan tombol merah 'OPEN' 🚨", nextNode: 'jebakanTombol', type: 'danger' },
             { text: "Periksa mata naga es yang berkilau 👁️", nextNode: 'jebakanNaga', type: 'danger' },
             { text: "Buka gerbang dengan Kunci Kuno 🔑", requiredItem: "Kunci Kuno", nextNode: 'tekaTekiGerbang', type: 'danger' },
             { text: "Coba dobrak paksa gerbangnya 💔", nextNode: 'endingGagal', type: 'danger' },
@@ -209,17 +209,17 @@ const storyNodes = {
     },
     jebakanTombol: {
         text: "Kamu menekan tombol merah itu. TIT! Tiba-tiba lantai di bawahmu terbuka dan menyemburkan gas beracun! Kamu terbatuk-batuk hebat dan pandanganmu mengabur sebelum berhasil melompat mundur! (1 Nyawa Hilang).",
-        illustration: "🚨💨🤮",
+        illustration: "🚨☢️🤮",
         bgClass: "bg-gradient-to-br from-red-950/40 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Kembali berdiri di depan gerbang dengan waspada 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
+        choices: [{ text: "Kembali berdiri 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     jebakanNaga: {
-        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! (1 Nyawa Hilang).\n\n [Petunjuk]\n-Mendengarkan musik agar susana menjadi santai- disana ada petunjuk berikutnya.",
+        text: "Saat kamu mendekati patung naga es, matanya menyala biru terang! Naga itu menghembuskan hawa es super dingin tepat ke arahmu! Tubuhmu membeku sesaat dan menjadi sangat lemas! \n(1 Nyawa Hilang).\n\n [Petunjuk]\n-Mendengarkan musik agar susana menjadi santai- disana ada petunjuk berikutnya.",
         illustration: "🐲❄️🥶",
         bgClass: "bg-gradient-to-br from-blue-950/50 via-slate-950 to-slate-950",
         takeDamage: true,
-        choices: [{ text: "Mundur menjauhi naga ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
+        choices: [{ text: "Mundur menjauhi naga🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
         text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial (ddmmyyyy)",
@@ -230,19 +230,19 @@ const storyNodes = {
         correctPassword: "20072003"
     },
     endingGagal: {
-        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.",
+        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)",
         illustration: "🙀💥🚪",
         takeDamage : true,
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini! Dan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa.. 😁",
+        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini!\nDan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu selalu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa..😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
+        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
@@ -713,7 +713,7 @@ function showStoryNode(nodeKey) {
                 choicesContainer.appendChild(submitBtn);
             } else if (nodeKey === 'endingSukses') {
                 const nextBtn = document.createElement('button');
-                nextBtn.innerHTML = "Baca ini ya ✉️";
+                nextBtn.innerHTML = "Baca ini ✉️";
                 nextBtn.className = "w-full bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 text-center px-5 py-3.5 rounded-xl border border-pink-300 transition-all duration-200 text-sm font-bold transform active:scale-95 text-white cursor-pointer btn-shimmer shadow-xl hover:scale-[1.01]";
                 nextBtn.addEventListener('click', () => {
                     photoModal.classList.remove('modal-active');
