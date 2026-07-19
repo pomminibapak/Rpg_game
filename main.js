@@ -98,7 +98,7 @@ const storyNodes = {
     },
     ruangSantaiMusikOn1: {
         text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat✨",
-        illustration: "🎶🎊✨",
+        illustration: "🎧🏝️✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
             { text: "Matikan musik ⏹️", nextNode: 'aksiStopMusik1', type: 'danger' }
