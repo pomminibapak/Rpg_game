@@ -92,7 +92,8 @@ const storyNodes = {
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' }
+              {text: "Putar musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'secondary' }
             
         ]
     },
