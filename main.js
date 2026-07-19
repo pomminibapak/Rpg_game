@@ -76,7 +76,7 @@ const storyNodes = {
     },
     
     ruangSantai: {
-        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n Coba menyalakan musik, agar lebih tenang 💫",
+        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu.\n Coba menyalakan musik, agar lebih tenang 💫",
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -97,7 +97,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu putar disini✨",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat✨",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
