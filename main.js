@@ -76,7 +76,7 @@ const storyNodes = {
     },
     
     ruangSantai: {
-        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu.\n Coba menyalakan musik, agar lebih tenang 💫",
+        text: "Kamu memasuki ruang santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu.\n Coba menyalakan musik, agar lebih susana lebih tenang 💫",
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -97,7 +97,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Buka pintu besi berkarat dan temukan kunci-",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Buka pintu besi berkarat dan temukan kunci-",
         illustration: "🎧🏝️✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -133,7 +133,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu aku sadar, ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini. \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu, aku sadar ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini. \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -160,7 +160,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ingin tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya..🙃\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku tidak tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya..🙃\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>SUCCESS!!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
