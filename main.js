@@ -88,7 +88,7 @@ const storyNodes = {
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCoba  dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi..😱\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCoba  dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi..😱\n\n[Petunjuk]\n-Putar musik 2, disana ada petunjuk berikutnya-",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -97,7 +97,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat✨",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\n\nTadinya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Buka pintu besi berkarat dan temukan kunci-",
         illustration: "🎧🏝️✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -252,7 +252,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey Adik Junior..\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua mimpimu.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu.\nTetap semangat kerja dan kuliahnya.\nTerima kasih sudah menjadi teman kerja yang luar biasa selama ini. \nJadilah dirimu sendiri yang selalu hebat. \nBerbahagialah hari ini dan seterusnya!✨✨\nSenang bisa mendengar dan berbagi cerita denganmu, banyak cerita yang ingin aku tulis disini sebenanya, tapi sepertinya itu tidak perlu.\nSenang bisa kenal denganmu😨\n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud secepatnya, aamiin..✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\n\nCheers for another great year ahead, Happy Birthday! ",
+        text: "Hey Adik Junior..\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua mimpimu.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu.\nTetap semangat kerja dan kuliahnya.\nTerima kasih sudah menjadi teman kerja yang luar biasa selama ini. \nJadilah dirimu sendiri yang selalu hebat. \nBerbahagialah hari ini dan seterusnya!✨✨\nSenang bisa mendengar dan berbagi cerita denganmu, banyak cerita yang ingin aku tulis disini sebenanya, tapi sepertinya itu tidak perlu.\nSenang bisa kenal denganmu😨\n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud, aamiin..✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\n\nCheers for another great year ahead, Happy Birthday! Adik Junior ",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
