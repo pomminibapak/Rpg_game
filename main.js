@@ -20,7 +20,7 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\nSebelum melangkah, mari verifikasi terlebih dahulu.\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "\n\nSebelum melangkah, mari verifikasi terlebih dahulu.\n\nSiapa yang memberimu coklat hari ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -98,7 +98,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Buka pintu besi berkarat dan temukan kunci-",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Cari Tombol 🟢 Hijau-",
         illustration: "🎧🏝️✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -125,7 +125,7 @@ const storyNodes = {
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita (cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil,\n Apakah kamu ingat ke rumah siapa saat itu?\n🔑: 'Nama lengkap'",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita (cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil,\n Apakah kamu ingat ke rumah siapa saat itu?\n🔑: 'Nama lengkap'",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
