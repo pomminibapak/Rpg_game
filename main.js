@@ -292,8 +292,7 @@ const storyNodes = {
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak3: {
-        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur! 
-        Happy Birthday Adik Junior!!' 🌿🌻",
+        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur! Happy Birthday Adik Junior!!' 🌿🌻",
         illustration: "🎀🌿✨",
         bgClass: "bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
