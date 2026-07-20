@@ -265,7 +265,7 @@ const storyNodes = {
         illustration: "❓🔮🎮",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-slate-950",
         choices: [
-            { text: "Ya, Tentu Bersedia! 🎮", nextNode: 'gamePenutupMulai', type: 'primary' },
+            { text: "Ya, Bersedia! 🎮", nextNode: 'gamePenutupMulai', type: 'primary' },
             { text: "Tidak, Langsung Selesai 🏁", nextNode: 'theEndNode', type: 'secondary' }
         ]
     },
@@ -280,19 +280,20 @@ const storyNodes = {
         ]
     },
     hadiahKotak1: {
-        text: "🎉 Kamu membuka Kotak Kiri! Di dalamnya terdapat gulungan emas bertuliskan:\n\n'Keberuntungan Berlipat Ganda! Kamu akan dikelilingi oleh orang-orang baik dan hari-hari penuh senyuman di usiamu yang baru ini!' 🌟✨",
+        text: "🎉 Kamu membuka Kotak Kiri! Di dalamnya terdapat gulungan emas bertuliskan:\n\n'Keberuntungan Berlipat Ganda! Kamu akan dikelilingi oleh orang-orang baik dan hari-hari penuh senyuman di usiamu yang baru ini! Happy Birthday Adik Junior !!' 🌟✨",
         illustration: "🛍️🌟✨",
         bgClass: "bg-gradient-to-br from-teal-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak2: {
-        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya secara ajaib!' 🎉🚀",
+        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya. Happy Birthday Adik Junior!!' 🎉🚀",
         illustration: "🎁🎊🔮",
         bgClass: "bg-gradient-to-br from-pink-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak3: {
-        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur!' 🌿🌻",
+        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur! 
+        Happy Birthday Adik Junior!!' 🌿🌻",
         illustration: "🎀🌿✨",
         bgClass: "bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
