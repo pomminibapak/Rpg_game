@@ -98,7 +98,7 @@ const storyNodes = {
         ]
     },
     ruangSantaiMusikOn1: {
-        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Cari Tombol 🟢 Hijau-",
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n\n[Petunjuk]\n-Cari Tombol 🔴  Merah-",
         illustration: "🎧🏝️✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
