@@ -241,7 +241,7 @@ const storyNodes = {
         correctPassword: "20072003"
     },
     endingGagal: {
-        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)\n\n[Petunjuk]\n-Cari tombol 🔵 dan masuk kedalamnya-",
+        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)\n\n[Petunjuk]\n-Cari tombol pintu besi dan masuk kedalamnya-",
         illustration: "🙀💥🚪",
         takeDamage : true,
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
