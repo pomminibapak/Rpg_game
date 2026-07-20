@@ -322,7 +322,7 @@ const storyNodes = {
 let currentItem = "Tangan Kosong";
 let maxHP = 5; 
 let playerHP = 5; 
-const daftarFoto = ["bersama1.png", "bersama2.png","bersama3.png","bersama4.png"];
+const daftarFoto = ["bersama1.png", "bersama2.png","bersama3.png","bersama4.png","bersama5.png"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
 
