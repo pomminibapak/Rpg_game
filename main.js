@@ -3,7 +3,7 @@
 // ==========================================
 const storyNodes = {
     update: {
-        text: "Hai Adik Junior!\nAkan ada sedikit pembaruan.. 🐛🐛🐛",
+        text: "Hai Adik Junior!\nAkan ada sedikit pembaruan..🐛🐛",
         illustration: "🛑🚧🛑",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -33,7 +33,7 @@ const storyNodes = {
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
-        correctPassword: "iLoveyou",
+        correctPassword: "cute",
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
