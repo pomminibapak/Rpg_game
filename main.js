@@ -10,7 +10,19 @@ const storyNodes = {
             { text: "⚠️⛔❌", nextNode:'welcome', type: 'secondary' }
         ]
     },
-    
+    // === TAMBAHKAN / PERBARUI BAGIAN STORY NODES DI MAIN.JS ===
+
+    // -------------------------------------------------------------
+    // 1. PROLOG & START
+    // -------------------------------------------------------------
+    startBoy: {
+        room: "PROLOGUE",
+        text: "Selamat datang di sebuah bangunan tua yang menyimpan banyak potongan memori khusus untukmu...<br><br>Di tengah lorong, terdapat sebuah <strong>Lift Tua</strong> ber dinding cermin yang tampaknya masih berfungsi dengan baik.<br><br>Apakah kamu siap menjelajahi setiap lantainya?",
+        choices: [
+            { text: "🛗 Masuk ke Dalam Lift", targetNode: "liftUtama" }
+        ]
+    },
+
     welcome1: {
         text: "Hai Adik Junior!\nAda sebuah petualangan kecil yang menantimu hari ini.\n\n Apakah kamu bersedia bermain?",
         illustration: "🍬🚥🎳",
@@ -29,15 +41,15 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\n Masukkan sandi administrator..",
+        text: "\n\nSebelum melanjutkan perualangan, ada pertanyaan untukmu..\n\n Siapakah yang memberimu game ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
-        correctPassword: "cute",
+        correctPassword: "Mislah",
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
-        text: "\n\n=============================\n =========S U C C E S S=========\n=============================\n\n\n===Jawaban berhasil diverifikasi===",
+        text: "\n\n=============================\n =========S U C C E S S=========\n=============================\n\n\n===Jawaban kamu berhasil diverifikasi===",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -839,5 +851,5 @@ function showChoices(node, nodeKey) {
 }
 
 // Menjalankan Game Pertama Kali
-showStoryNode('update');
+showStoryNode('welcome1');
 updateHPDisplay();

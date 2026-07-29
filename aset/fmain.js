@@ -2,6 +2,15 @@
 // 1. STRUKTUR DATA CERITA (DENGAN GAME PENUTUP)
 // ==========================================
 const storyNodes = {
+    update: {
+        text: "Hai Adik Junior!\nAkan ada sedikit pembaruan..🐛🐛",
+        illustration: "🛑🚧🛑",
+        bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
+        choices: [
+            { text: "⚠️⛔❌", nextNode:'welcome', type: 'secondary' }
+        ]
+    },
+    
     welcome1: {
         text: "Hai Adik Junior!\nAda sebuah petualangan kecil yang menantimu hari ini.\n\n Apakah kamu bersedia bermain?",
         illustration: "🍬🚥🎳",
@@ -20,11 +29,11 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\nSebelum melangkah, mari verifikasi terlebih dahulu.\n\nSiapakah yang memberimu coklat hari ini?",
+        text: "\n\n Masukkan sandi administrator..",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
-        correctPassword: "mislah",
+        correctPassword: "cute",
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
@@ -56,11 +65,11 @@ const storyNodes = {
         ]
     },
     cariKunci: {
-        text: "Untuk Membuka gerbang kamu membutuhkan Kunci kuno.\nUntuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam kantong dan kembali ke gerbang utama.",
+        text: "Untuk Membuka gerbang kamu membutuhkan Kunci kuno.\nUntuk mencari kunci ada beberapa petunjuk di ruangan tertentu.\n\nCoba telusuri setiap ruangan dan temukan petunjuknya.\nSimpan kunci kedalam tas dan kembali ke gerbang utama.",
         illustration: "🎯⚒️🗄️",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Telusuri ruangan🚪", nextNode: 'start', type: 'secondary' }
+            { text: "Telusuri ruangan🚪", nextNode: 'pilihanLorong', type: 'secondary' }
         ]
     },
     pilihanLorong: {
@@ -76,28 +85,39 @@ const storyNodes = {
     },
     
     ruangSantai: {
-        text: "Kamu memasuki Ruang Santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu. Suasananya sangat tenang.\n kamu bisa menyalakan musik.. 💫",
+        text: "Kamu memasuki ruang santai. Di sini terdapat meja, sofa empuk dan pemutar musik tua yang berdebu.\n Coba menyalakan musik, agar susana lebih tenang 💫",
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Nyalakan musik ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-            { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' },
+            { text: "Putar musik 1 ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+            {text: "Putar musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' }
         
         ]
     },
     
     ruangSantaiMusikOn: {
-        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCoba  dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi..😱\n\n[Petunjuk]\n-Pintu besi adalah petunjuk selanjutnya-",
+        text: "Musik sudah dinyalakan,\n  Selamat menikmati musik santai .. 🎶\n\nCoba  dengerin lagunya ya, aku sudah simpan kamu dilagu ini agar tetap abadi..😱\nCoba putar musik 2",
         illustration: "🎶🎊✨",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'danger' }
+              {text: "Putar musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: "Bosan!!, Matikan musik ⏹️", nextNode: 'aksiStopMusik', type: 'secondary' }
+            
+        ]
+    },
+    ruangSantaiMusikOn1: {
+        text: "Musik sudah dinyalakan,\n  Selamat mendengarkan..🎧 🎶\nAwalnya aku ingin simpan lagu kesukaan kamu disini, agar aku bisa selalu ingat, nanti kasih tau ya lagu favoritnya apa.✨\n",
+        illustration: "🎧🏝️✨",
+        bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
+        choices: [
+            { text: "Matikan musik ⏹️", nextNode: 'aksiStopMusik1', type: 'danger' }
             
         ]
     },
     
     ruangJebakan: {
-        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang\nDi depanmu hanya ada tiga tombol, kamu harus segera keluar!",
+        text: "*BRAAAKK!!*\nPintu besi di belakangmu tertutup keras dan terkunci otomatis! Ruangan ini sangat sempit, dingin, dan remang-remang.\nDi depanmu hanya ada tiga tombol, kamu harus segera keluar!",
         illustration: "🧟🍃🪵",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
@@ -108,13 +128,13 @@ const storyNodes = {
             { text: "🔵 Tekan Tombol Biru",
             type:'danger',
             nextNode: "jebakanZonk2" },
-            { text: "Kembali ke lorong 🛤️", nextNode: "pilihanLorong", type:'primary'}
+            { text: "Kembali ke lorong 🛤️", nextNode: "pilihanLorong", type:'secondary'}
         ]
     },
 
     // A. Kondisi Jika Selamat / Lolos
     jebakanDalam: {
-        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda Pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita(cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil, apakah kamu ingat itu ke rumah siapa?\n🔑:'Nama lengkap'",
+        text: "*KLIK... BZZZT*\n Pintu besi berkarat di belakangmu perlahan bergeser semakin jauh, kamu terkurung semakin dalam di ruangan hampa.\nAda pertanyaan yang bisa menyelamatkanmu dari ruangan ini.\n\n 'Suatu hari kita pernah berkunjung ke rumah teman kerja kita (cikande permai), sore itu hujan sangat deras, saat akan pulang jalanan banjir dan kita harus lewat jalan kecil,\n Apakah kamu ingat ke rumah siapa saat itu?\n🔑: 'Nama lengkap'",
         illustration: "🕸️🍃🚧",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar1',
@@ -123,7 +143,7 @@ const storyNodes = {
         
     },
         sandiBenar1: {
-        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu akhirnya aku sadar, ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini, \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
+        text: "\nJawaban kamu tepat, ternyata kamu masih ingat😁\nSejak momen itu, aku sadar ternyata kamu teman kerja yang seru dan menyenangkan.\n\nSekarang kamu bisa keluar dari ruangan ini. \n\n[Petunjuk]\n-Cari kunci kuno untuk membuka gerbang utama, Kunci kuno tersimpan dilaci rahasia.\nCari disekitar ruang ini.",
         illustration: "💫🔑🍃",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -150,7 +170,7 @@ const storyNodes = {
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950"
     },
     sandiBenar2: {
-        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku ingin tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya.\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
+        text: "\nBerhasil, jawaban yang tepat. \n\nHmm, sebenarnya aku tidak tau alasan kenapa kamu kasih aku barang itu, mungkin karena kasihan ya..😅\ntapi aku tetap senang dan akan menjaganya ko. Terima kasih banyak ya..🙃\n\nBaiklah Kamu sekarang dapat membuka laci itu.",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>SUCCESS!!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
@@ -222,7 +242,7 @@ const storyNodes = {
         choices: [{ text: "Mundur menjauhi naga🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     tekaTekiGerbang: {
-        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala: \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial (ddmmyyyy)",
+        text: "Kunci masuk dengan pas. KLIK. Namun, layar digital menyala : \n'Masukkan Kode PIN' \n\n 🔑 : Tanggal Spesial kamu.. (ddmmyyyy)",
         illustration: "🔢🔐🚪",
         bgClass: "bg-gradient-to-br from-cyan-950/50 via-slate-950 to-pink-950/20",
         isPasswordNode: true,
@@ -230,19 +250,19 @@ const storyNodes = {
         correctPassword: "20072003"
     },
     endingGagal: {
-        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)",
+        text: "Kamu gagal mendobrak pintu. Penjaga gerbang menertawakanmu. Kamu harus mencoba lagi.\n(1 Nyawa hilang)\n\n[Petunjuk]\n-Cari tombol pintu besi dan masuk kedalamnya-",
         illustration: "🙀💥🚪",
         takeDamage : true,
         bgClass: "bg-gradient-to-br from-red-950/30 via-slate-950 to-slate-950",
         choices: [{ text: "Mundur kembali ke depan gerbang 🏃‍♂️", nextNode: 'pintuKeluar', type: 'secondary' }]
     },
     endingSukses: {
-        text: "🎉🎉 KREEEAK! BIP BIP! PIN Benar!\n Gerbang terbuka luas! Cahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini!\nDan yang terpenting... \nSELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu selalu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa..😁",
+        text: "🎉🎉 BIP! BIP! PIN Benar!\n Gerbang terbuka luas! \nCahaya terang menyinarimu, seluruh ruangan dipenuhi konfeti yang indah. \n Selamat! Kamu berhasil menyelesaikan misi ini!\nDan SELAMAT ULANG TAHUN Yang Ke 23 Adik Junior! 🎂✨\n Semoga harimu selalu menyenangkan dan penuh kebahagiaan! \n Dengerin dulu lagunya yaa, sambil pikir-pikir besok mau teraktir apa..😁",
         illustration: "🏰🎈🎁",
         bgClass: "bg-gradient-to-br from-pink-950/50 via-slate-950 to-yellow-950/30"
     },
     halamanSurat: {
-        text: "Hey adik Junior.. ,\nSelamat ulang tahun ya! Di hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua impianmu. Terima kasih sudah menjadi teman kerja yang luar biasa selama ini.\nSemoga tahun ini membawa banyak cerita indah, tawa yang tulus, dan ketenangan di setiap langkahmu. Jadilah dirimu sendiri yang selalu hebat. Berbahagialah hari ini dan seterusnya!✨✨nnnnn",
+        text: "Hey Adik Junior..\nSelamat ulang tahun ya! \nDi hari yang luar biasa ini, aku berdoa semoga kamu selalu diberikan kesehatan, kebahagiaan yang luar biasa, dan semangat untuk terus meraih semua mimpimu.\nSemoga tahun ini membawa banyak cerita indah untukmu, tawa yang tulus, dan ketenangan di setiap langkahmu.\nTetap semangat kerja dan kuliahnya.🌱\nTerima kasih sudah menjadi teman kerja yang luar biasa selama ini. \nJadilah dirimu sendiri yang selalu hebat. \nBerbahagialah hari ini dan seterusnya!✨✨\nSenang bisa mendengar dan berbagi cerita denganmu, banyak cerita yang ingin aku tulis disini sebenarnya, tapi sepertinya itu tidak perlu.\nSenang bisa kenal denganmu😨\n\nSekali lagi Selamat ulang tahun ya, maaf tidak bisa kasih hadiah apa-apa, semoga doa-doa terbaiknya cepat terwujud, aamiin..✨✨\nTetaplah menjadi sosok yang ceria, humble, dan menginspirasi.\n\nCheers for another great year ahead, Happy Birthday! Adik Junior 🎊🎊",
         illustration: "✉️🌟🎈",
         bgClass: "bg-gradient-to-br from-rose-950/60 via-slate-950 to-pink-950/60",
         choices: [
@@ -254,7 +274,7 @@ const storyNodes = {
         illustration: "❓🔮🎮",
         bgClass: "bg-gradient-to-br from-purple-950/40 via-slate-950 to-slate-950",
         choices: [
-            { text: "Ya, Tentu Bersedia! 🎮", nextNode: 'gamePenutupMulai', type: 'primary' },
+            { text: "Ya, Bersedia! 🎮", nextNode: 'gamePenutupMulai', type: 'primary' },
             { text: "Tidak, Langsung Selesai 🏁", nextNode: 'theEndNode', type: 'secondary' }
         ]
     },
@@ -269,19 +289,19 @@ const storyNodes = {
         ]
     },
     hadiahKotak1: {
-        text: "🎉 Kamu membuka Kotak Kiri! Di dalamnya terdapat gulungan emas bertuliskan:\n\n'Keberuntungan Berlipat Ganda! Kamu akan dikelilingi oleh orang-orang baik dan hari-hari penuh senyuman di usiamu yang baru ini!' 🌟✨",
+        text: "🎉 Kamu membuka Kotak Kiri! Di dalamnya terdapat gulungan emas bertuliskan:\n\n'Keberuntungan Berlipat Ganda! Kamu akan dikelilingi oleh orang-orang baik dan hari-hari penuh senyuman di usiamu yang baru ini! Happy Birthday Adik Junior !!' 🌟✨",
         illustration: "🛍️🌟✨",
         bgClass: "bg-gradient-to-br from-teal-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak2: {
-        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya secara ajaib!' 🎉🚀",
+        text: "🎉 Kamu membuka Kotak Tengah! Di dalamnya memancarkan cahaya pink lembut bertuliskan:\n\n'Energi Kebahagiaan Tak Terbatas! Semua impian, target, dan rencana besarmu tahun ini akan dimudahkan jalannya. Happy Birthday Adik Junior!!' 🎉🚀",
         illustration: "🎁🎊🔮",
         bgClass: "bg-gradient-to-br from-pink-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
     },
     hadiahKotak3: {
-        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan Paripurna! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur!' 🌿🌻",
+        text: "🎉 Kamu membuka Kotak Kanan! Di dalamnya terdapat taburan bintang kecil berkilau bertuliskan:\n\n'Kedamaian Hati & Kesehatan fikiran! Jiwamu akan selalu tenang, tubuhmu akan selalu sehat bugar, dan harimu dipenuhi rasa syukur! Happy Birthday Adik Junior!!' 🌿🌻",
         illustration: "🎀🌿✨",
         bgClass: "bg-gradient-to-br from-emerald-950/40 via-slate-950 to-slate-950",
         choices: [{ text: "Lanjutkan Langkah Terakhir 🏁", nextNode: 'theEndNode', type: 'primary' }]
@@ -309,15 +329,16 @@ const storyNodes = {
 // 2. STATE SISTEM GAME & SLIDE FOTO
 // ==========================================
 let currentItem = "Tangan Kosong";
-let maxHP = 5; 
-let playerHP = 5; 
-const daftarFoto = ["bersama1.png", "bersama2.png","bersama3.png","bersama4.png"];
+let maxHP = 4; 
+let playerHP = 4; 
+const daftarFoto = ["bersama1.png", "bersama2.png","bersama3.png","bersama4.png","bersama5.png"];
 let indeksFotoAktif = 0;
 let autoSlideInterval = null;
 
 // ==========================================
 // 3. REFERENSI ELEMEN DOM
 // ==========================================
+const bgmSantai1 = document.getElementById('bgm-santai1');
 const bgmSantai = document.getElementById('bgm-santai');
 const bgScreen = document.getElementById('bg-screen');
 const storyTextElement = document.getElementById('story-text');
@@ -398,9 +419,9 @@ nextSlideBtn.addEventListener('click', () => {
 function stopAllMusic() {
     bgmHbd.pause(); bgmHbd.currentTime = 0;
     bgmRomantis.pause(); bgmRomantis.currentTime = 0;
-    bgmHadiah.pause(); bgmHadiah.currentTime = 0; // Tambahkan baris ini
-    // Tambahkan baris di bawah ini:
+    bgmHadiah.pause(); bgmHadiah.currentTime = 0;
     if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
+    if (bgmSantai1) { bgmSantai1.pause(); bgmSantai1.currentTime = 0; }
 }
 
 function updateHPDisplay() {
@@ -615,9 +636,19 @@ function showStoryNode(nodeKey) {
         showStoryNode('ruangSantaiMusikOn'); // Alihkan visual ke tombol Matikan Musik
         return; // Menghentikan sisa proses ke bawah
     }
-    
+     if (nodeKey === 'aksiPutarMusik1') {
+        stopAllMusic();
+        if (bgmSantai) bgmSantai1.play().catch(e => {});
+        showStoryNode('ruangSantaiMusikOn1'); // Alihkan visual ke tombol Matikan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
     if (nodeKey === 'aksiStopMusik') {
         if (bgmSantai) { bgmSantai.pause(); bgmSantai.currentTime = 0; }
+        showStoryNode('ruangSantai'); // Kembalikan visual ke tombol Nyalakan Musik
+        return; // Menghentikan sisa proses ke bawah
+    }
+    if (nodeKey === 'aksiStopMusik1') {
+        if (bgmSantai) { bgmSantai1.pause(); bgmSantai.currentTime = 0; }
         showStoryNode('ruangSantai'); // Kembalikan visual ke tombol Nyalakan Musik
         return; // Menghentikan sisa proses ke bawah
     }
@@ -808,5 +839,5 @@ function showChoices(node, nodeKey) {
 }
 
 // Menjalankan Game Pertama Kali
-showStoryNode('welcome1');
+showStoryNode('update');
 updateHPDisplay();
