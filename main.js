@@ -45,7 +45,7 @@ const storyNodes = {
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
-        correctPassword: "Mislah",
+        correctPassword:"Mislah",
         bgClass: "bg-slate-950"
     },
     sandiBenar: {
