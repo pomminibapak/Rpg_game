@@ -45,8 +45,8 @@ const storyNodes = {
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
-        correctPassword:"Mislah",
-        bgClass: "bg-slate-950"
+        correctPassword: "mislah",
+        bgClass: "bg-slate-950",
     },
     sandiBenar: {
         text: "\n\n=============================\n =========S U C C E S S=========\n=============================\n\n\n===Jawaban kamu berhasil diverifikasi===",
