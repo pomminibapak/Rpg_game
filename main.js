@@ -41,7 +41,7 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\nSebelum melanjutkan perualangan, ada pertanyaan untukmu..\n\n Siapakah yang memberimu game ini?",
+        text: "\n\nSebelum melanjutkan petualangan, ada pertanyaan untukmu..\n\n Siapakah yang memberimu https://github.com/pomminibapak/Undangan-syahril-.git?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
