@@ -41,7 +41,7 @@ const storyNodes = {
         ]
     },
     welcome: {
-        text: "\n\nSebelum melanjutkan petualangan, ada pertanyaan untukmu..\n\n Siapakah yang memberimu https://github.com/pomminibapak/Undangan-syahril-.git?",
+        text: "\n\nSebelum melanjutkan petualangan, ada pertanyaan untukmu..\n\n Siapakah yang memberimu game ini?",
         illustration: "🕵️‍♂️✨<br><span class='text-xs text-slate-400 font-sans block mt-2'>[ Akses Terkunci ]</span>",
         isPasswordNode: true,
         passwordCorrectNode: 'sandiBenar',
@@ -49,7 +49,7 @@ const storyNodes = {
         bgClass: "bg-slate-950",
     },
     sandiBenar: {
-        text: "\n\n=============================\n =========S U C C E S S=========\n=============================\n\n\n===Jawaban kamu berhasil diverifikasi===",
+        text: "\n\n=============================\n =========S U C C E S S=========\n=============================\n\n\n===Jawaban kamu benar===",
         illustration: "👏🔐<br><span class='text-sm text-pink-400 font-bold block mt-2'>AKSES DIBUKA!</span>",
         bgClass: "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
         choices: [
