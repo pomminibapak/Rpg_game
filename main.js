@@ -101,8 +101,8 @@ const storyNodes = {
         illustration: "🍿🎹📀",
         bgClass: "bg-gradient-to-br from-slate-950 via-gray-900 to-slate-950",
         choices: [
-            { text: "Putar musik 1 ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
-            {text: "Putar musik 2 ▶️", nextNode: 'aksiPutarMusik1', type: 'danger' },
+            { text: "Putar !! ▶️", nextNode: 'aksiPutarMusik', type: 'danger' },
+            { text: "Baca Buku Cerita 📕", nextNode: 'halamanBukuCerita', type: 'danger' },
             { text: " Keluar menuju lorong 🛣️", nextNode: 'pilihanLorong', type: 'secondary' }
         
         ]
@@ -641,7 +641,17 @@ function launchConfettiCelebration() {
 // 5. INTI LOGIKA ALUR CERITA (PERBAIKAN TIMING CONFETTI)
 // ==========================================
 function showStoryNode(nodeKey) {
-    
+    // Halaman buku cerita dirender terpisah agar alur game utama tetap aman.
+    if (nodeKey === 'halamanBukuCerita') {
+        if (typeof window.renderHalamanBukuCerita === 'function') {
+            window.renderHalamanBukuCerita();
+        } else {
+            storyTextElement.textContent = 'Halaman buku cerita sedang dimuat. Coba beberapa saat lagi.';
+            choicesContainer.innerHTML = '';
+        }
+        return;
+    }
+
     if (nodeKey === 'aksiPutarMusik') {
         stopAllMusic();
         if (bgmSantai) bgmSantai.play().catch(e => {});

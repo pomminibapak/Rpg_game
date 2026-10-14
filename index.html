@@ -120,7 +120,7 @@
                  <h4 class="text-2xl font-black text-pink-500 mb-4 m-10 tracking-wide font-sans">
                 YEYYY KAMU BERHASIL !!! 🎉🎉
             </h4>
-                <img src="foto.png" alt="Foto Ulang Tahun" class="w-90% h-auto rounded border border-slate-200 object-cover block mx-auto mb-3">
+                <img src="foto.png" alt="Foto Ulang Tahun" class="w-70% h-auto rounded border border-slate-200 object-cover block mx-auto mb-3">
                 <p class="text-slate-800 font-bold text-m tracking-wide font-mono">
                     ✨ Happy Birthday ✨
                 </p>
@@ -178,5 +178,291 @@
 
 
     <script src="main.js"></script>
+
+    <!-- Firebase Buku Cerita Publik -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import {
+            getFirestore, collection, addDoc, query, orderBy, limit,
+            onSnapshot, serverTimestamp
+        } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+        import {
+            getAuth, signInAnonymously, onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+        // GANTI semua nilai di bawah ini dengan konfigurasi aplikasi Web Firebase kamu.
+        const firebaseConfig = {
+    apiKey: "AIzaSyDIqjP1yNaxI7W7x-f-1q5Kse1SopPeZ-I",
+    authDomain: "game-adik-junior.firebaseapp.com",
+    projectId: "game-adik-junior",
+    storageBucket: "game-adik-junior.firebasestorage.app",
+    messagingSenderId: "371803983954",
+    appId: "1:371803983954:web:fbe4c87f857e6eb9da0f8b"
+};
+
+        const configSudahDiisi =
+            firebaseConfig.apiKey !== "ISI_API_KEY" &&
+            firebaseConfig.projectId !== "ISI_PROJECT_ID" &&
+            firebaseConfig.appId !== "ISI_APP_ID";
+
+        let db = null;
+        let auth = null;
+        let daftarCeritaUnsubscribe = null;
+        let uidAktif = null;
+
+        const kelasTombol = "w-full px-4 py-3 rounded-xl text-sm font-bold transition-all active:scale-95";
+        const kelasInput = "w-full bg-slate-950 border border-slate-700 focus:border-pink-500 rounded-xl px-4 py-3 text-slate-100 outline-none text-sm";
+
+        function buatElemen(tag, className, text) {
+            const el = document.createElement(tag);
+            if (className) el.className = className;
+            if (text !== undefined) el.textContent = text;
+            return el;
+        }
+
+        function setStatus(panel, pesan, error = false) {
+            const status = panel.querySelector("#buku-status");
+            if (!status) return;
+            status.textContent = pesan;
+            status.className = error
+                ? "text-xs text-red-300 mt-3"
+                : "text-xs text-slate-400 mt-3";
+        }
+
+        function formatTanggal(timestamp) {
+            if (!timestamp || typeof timestamp.toDate !== "function") return "Baru saja";
+            return new Intl.DateTimeFormat("id-ID", {
+                day: "2-digit", month: "long", year: "numeric",
+                hour: "2-digit", minute: "2-digit"
+            }).format(timestamp.toDate());
+        }
+
+        function buatTampilanBuku() {
+            const storyContainer = document.getElementById("story-container");
+            const storyText = document.getElementById("story-text");
+            const choices = document.getElementById("choices-container");
+            const storyImage = document.getElementById("story-image");
+
+            if (!storyContainer || !storyText || !choices || !storyImage) {
+                console.error("Elemen game untuk Buku Cerita tidak ditemukan.");
+                return;
+            }
+
+            // Bersihkan panel lama jika halaman dibuka kembali.
+            document.getElementById("storybook-panel")?.remove();
+            storyText.classList.add("hidden");
+            choices.innerHTML = "";
+            storyImage.textContent = "📚";
+
+            const panel = buatElemen("section", "space-y-4");
+            panel.id = "storybook-panel";
+
+            const heading = buatElemen("div", "text-center");
+            heading.append(
+                buatElemen("p", "text-xs uppercase tracking-[0.25em] text-pink-300 font-bold", "PUBLIC STORY BOOK"),
+                buatElemen("h2", "text-2xl font-black text-white mt-2", "Buku Cerita 📚"),
+                buatElemen("p", "text-sm text-slate-400 mt-2", "Tuliskan ceritamu, lalu baca kisah dari pengunjung lainnya.")
+            );
+
+            const form = buatElemen("form", "space-y-3 bg-slate-950/70 border border-slate-800 rounded-xl p-4");
+            form.id = "buku-form";
+
+            const labelPenulis = buatElemen("label", "block text-xs font-semibold text-slate-300", "Nama penulis");
+            labelPenulis.htmlFor = "buku-penulis";
+            const inputPenulis = buatElemen("input", kelasInput);
+            inputPenulis.id = "buku-penulis";
+            inputPenulis.name = "penulis";
+            inputPenulis.type = "text";
+            inputPenulis.maxLength = 50;
+            inputPenulis.required = true;
+            inputPenulis.placeholder = "Masukkan nama kamu";
+
+            const labelJudul = buatElemen("label", "block text-xs font-semibold text-slate-300", "Judul cerita");
+            labelJudul.htmlFor = "buku-judul";
+            const inputJudul = buatElemen("input", kelasInput);
+            inputJudul.id = "buku-judul";
+            inputJudul.name = "judul";
+            inputJudul.type = "text";
+            inputJudul.maxLength = 100;
+            inputJudul.required = true;
+            inputJudul.placeholder = "Contoh: Petualangan di Hutan Ajaib";
+
+            const labelIsi = buatElemen("label", "block text-xs font-semibold text-slate-300", "Isi cerita");
+            labelIsi.htmlFor = "buku-isi";
+            const textareaIsi = buatElemen("textarea", kelasInput);
+            textareaIsi.id = "buku-isi";
+            textareaIsi.name = "isi";
+            textareaIsi.rows = 5;
+            textareaIsi.maxLength = 10000;
+            textareaIsi.required = true;
+            textareaIsi.placeholder = "Mulai tulis ceritamu di sini...";
+
+            const counter = buatElemen("p", "text-right text-xs text-slate-500", "0/10000 karakter");
+            textareaIsi.addEventListener("input", () => {
+                counter.textContent = `${textareaIsi.value.length}/10000 karakter`;
+            });
+
+            const submit = buatElemen("button", `${kelasTombol} bg-gradient-to-r from-pink-600 to-rose-600 text-white`, "Simpan Cerita ✍️");
+            submit.type = "submit";
+            const status = buatElemen("p", "text-xs text-slate-400 mt-3", "");
+            status.id = "buku-status";
+
+            form.append(labelPenulis, inputPenulis, labelJudul, inputJudul, labelIsi, textareaIsi, counter, submit, status);
+
+            const listSection = buatElemen("div", "space-y-3");
+            const listHeading = buatElemen("div", "flex items-center justify-between gap-2");
+            listHeading.append(
+                buatElemen("h3", "text-lg font-bold text-white", "Cerita dari Pengunjung"),
+                buatElemen("span", "text-xs text-slate-400", "Terbaru")
+            );
+            const list = buatElemen("div", "space-y-2");
+            list.id = "buku-daftar";
+            list.append(buatElemen("p", "text-sm text-slate-400 text-center py-4", "Menghubungkan ke Firebase..."));
+            listSection.append(listHeading, list);
+
+            const reader = buatElemen("article", "hidden bg-slate-950 border border-pink-500/30 rounded-xl p-4 space-y-3");
+            reader.id = "buku-pembaca";
+            const readerTitle = buatElemen("h3", "text-xl font-bold text-white");
+            readerTitle.id = "buku-baca-judul";
+            const readerMeta = buatElemen("p", "text-xs text-slate-400");
+            readerMeta.id = "buku-baca-meta";
+            const readerBody = buatElemen("div", "text-sm text-slate-200 leading-relaxed whitespace-pre-wrap break-words");
+            readerBody.id = "buku-baca-isi";
+            const closeReader = buatElemen("button", `${kelasTombol} bg-slate-800 hover:bg-slate-700 text-white`, "Tutup Cerita");
+            closeReader.type = "button";
+            closeReader.addEventListener("click", () => reader.classList.add("hidden"));
+            reader.append(readerTitle, readerMeta, readerBody, closeReader);
+
+            const back = buatElemen("button", `${kelasTombol} bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700`, "← Kembali ke Petualangan");
+            back.type = "button";
+            back.addEventListener("click", () => {
+                if (daftarCeritaUnsubscribe) {
+                    daftarCeritaUnsubscribe();
+                    daftarCeritaUnsubscribe = null;
+                }
+                panel.remove();
+                storyText.classList.remove("hidden");
+                window.showStoryNode("ruangSantai");
+            });
+
+            panel.append(heading, form, listSection, reader, back);
+            storyContainer.appendChild(panel);
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const penulis = inputPenulis.value.trim();
+                const judul = inputJudul.value.trim();
+                const isi = textareaIsi.value.trim();
+
+                if (!penulis || !judul || !isi) {
+                    setStatus(panel, "Nama, judul, dan isi cerita wajib diisi.", true);
+                    return;
+                }
+                if (judul.length > 100 || penulis.length > 50 || isi.length > 10000) {
+                    setStatus(panel, "Ada bagian yang melebihi batas karakter.", true);
+                    return;
+                }
+                if (!db || !uidAktif) {
+                    setStatus(panel, "Firebase belum siap. Periksa konfigurasi dan koneksi internet.", true);
+                    return;
+                }
+
+                submit.disabled = true;
+                submit.textContent = "Menyimpan...";
+                try {
+                    await addDoc(collection(db, "cerita"), {
+                        judul,
+                        penulis,
+                        isi,
+                        uid: uidAktif,
+                        createdAt: serverTimestamp()
+                    });
+                    form.reset();
+                    counter.textContent = "0/10000 karakter";
+                    setStatus(panel, "Cerita berhasil disimpan! Terima kasih sudah berbagi. ✨");
+                } catch (error) {
+                    console.error("Gagal menyimpan cerita:", error);
+                    setStatus(panel, "Cerita gagal disimpan. Periksa Firestore Rules dan koneksi Firebase.", true);
+                } finally {
+                    submit.disabled = false;
+                    submit.textContent = "Simpan Cerita ✍️";
+                }
+            });
+
+            mulaiFirebase(panel);
+        }
+
+        async function mulaiFirebase(panel) {
+            const list = panel.querySelector("#buku-daftar");
+            if (!configSudahDiisi) {
+                list.replaceChildren(buatElemen("p", "text-sm text-amber-300 py-3", "Firebase belum dikonfigurasi. Isi firebaseConfig di index.html terlebih dahulu."));
+                setStatus(panel, "Isi konfigurasi aplikasi Web Firebase kamu.", true);
+                return;
+            }
+
+            try {
+                if (!db) {
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+                }
+
+                if (!auth.currentUser) {
+                    await signInAnonymously(auth);
+                }
+                uidAktif = auth.currentUser?.uid || null;
+                if (!uidAktif) throw new Error("Identitas anonim belum tersedia.");
+
+                if (daftarCeritaUnsubscribe) daftarCeritaUnsubscribe();
+                const q = query(collection(db, "cerita"), orderBy("createdAt", "desc"), limit(30));
+
+                daftarCeritaUnsubscribe = onSnapshot(q, (snapshot) => {
+                    list.replaceChildren();
+                    if (snapshot.empty) {
+                        list.append(buatElemen("p", "text-sm text-slate-400 text-center py-4", "Belum ada cerita. Jadilah yang pertama menulis!"));
+                        return;
+                    }
+
+                    snapshot.forEach((docSnap) => {
+                        const data = docSnap.data();
+                        const card = buatElemen("div", "bg-slate-950/70 border border-slate-800 rounded-xl p-3");
+                        const title = buatElemen("h4", "font-bold text-white break-words", data.judul || "Tanpa judul");
+                        const meta = buatElemen("p", "text-xs text-slate-400 mt-1", `Oleh ${data.penulis || "Anonim"} • ${formatTanggal(data.createdAt)}`);
+                        const preview = buatElemen("p", "text-sm text-slate-300 mt-2");
+                        const rawText = String(data.isi || "");
+                        preview.textContent = rawText.length > 120 ? `${rawText.slice(0, 120)}…` : rawText;
+                        const read = buatElemen("button", "mt-3 text-sm font-bold text-pink-300 hover:text-pink-200", "Baca cerita →");
+                        read.type = "button";
+                        read.addEventListener("click", () => {
+                            panel.querySelector("#buku-baca-judul").textContent = data.judul || "Tanpa judul";
+                            panel.querySelector("#buku-baca-meta").textContent = `Oleh ${data.penulis || "Anonim"} • ${formatTanggal(data.createdAt)}`;
+                            panel.querySelector("#buku-baca-isi").textContent = rawText;
+                            const reader = panel.querySelector("#buku-pembaca");
+                            reader.classList.remove("hidden");
+                            reader.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                        });
+                        card.append(title, meta, preview, read);
+                        list.append(card);
+                    });
+                }, (error) => {
+                    console.error("Gagal membaca daftar cerita:", error);
+                    list.replaceChildren(buatElemen("p", "text-sm text-red-300 py-3", "Daftar cerita gagal dimuat. Periksa Authentication dan Firestore Rules."));
+                });
+            } catch (error) {
+                console.error("Firebase Buku Cerita:", error);
+                list.replaceChildren(buatElemen("p", "text-sm text-red-300 py-3", "Tidak dapat terhubung ke Firebase. Periksa konfigurasi dan aktifkan Anonymous Authentication."));
+                setStatus(panel, "Koneksi Firebase gagal.", true);
+            }
+        }
+
+        // Dipanggil oleh showStoryNode() di main.js.
+        window.renderHalamanBukuCerita = buatTampilanBuku;
+
+        // Menyediakan showStoryNode untuk tombol kembali pada halaman buku.
+        // Fungsi global ini dibuat di main.js sebagai function declaration.
+        if (typeof window.showStoryNode !== "function") {
+            console.warn("showStoryNode belum tersedia pada window. Pastikan main.js dimuat sebelum halaman buku dipakai.");
+        }
+    </script>
 </body>
 </html>
