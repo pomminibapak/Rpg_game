@@ -261,13 +261,13 @@
             heading.append(
                 buatElemen("p", "text-xs uppercase tracking-[0.25em] text-pink-300 font-bold", "THIS IS STORY BOOK"),
                 buatElemen("h2", "text-2xl font-black text-white mt-2", "The Special 💢"),
-                buatElemen("p", "text-sm text-slate-400 mt-2", "Hey Adik Junior, Selamat Datang dibuku ceritaku, disini aku tulis semua tentangmu.")
+                buatElemen("p", "text-sm text-slate-400 mt-2", "Hey Adik Junior, Selamat Datang dibuku ceritaku, disini aku tulis semua tentangmu. Kamu juga bisa menulis sesuatu jika kamu mau, Nanti pasti aku baca..")
             );
 
             const form = buatElemen("form", "space-y-3 bg-slate-950/70 border border-slate-800 rounded-xl p-4");
             form.id = "buku-form";
 
-            const labelPenulis = buatElemen("label", "block text-xs font-semibold text-slate-300", "Nama penulis");
+            const labelPenulis = buatElemen("label", "block text-xs font-semibold text-slate-300", "Tulis Namamu disini");
             labelPenulis.htmlFor = "buku-penulis";
             const inputPenulis = buatElemen("input", kelasInput);
             inputPenulis.id = "buku-penulis";
@@ -312,7 +312,7 @@
             const listSection = buatElemen("div", "space-y-3");
             const listHeading = buatElemen("div", "flex items-center justify-between gap-2");
             listHeading.append(
-                buatElemen("h3", "text-lg font-bold text-white", "Cerita dari Pengunjung"),
+                buatElemen("h3", "text-lg font-bold text-white", "Cerita Yang Pernah Ditulis"),
                 buatElemen("span", "text-xs text-slate-400", "Terbaru")
             );
             const list = buatElemen("div", "space-y-2");
